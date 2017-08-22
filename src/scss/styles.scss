@@ -1,0 +1,261 @@
+$brand: #4B717F;
+$interactive: #77B4CC;	
+$background: #E2F7FF;   //Text color & background
+$hover: #95E1FF;		//Text color when background = $background		
+
+.headerImage{
+	background: url('https://images.alphacoders.com/109/109221.jpg') no-repeat center;
+	min-height: 500px;
+	.bgBlack{
+		background-color: rgba(0,0,0,0.6);
+		min-height: 500px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		-webkit-flex-flow: column;
+	}
+	h1{
+		font-size: 48px;
+		color: $background;
+	}
+	p{
+		font-size: 18px;
+		color: $background;
+	}
+	
+}
+
+.navbar{
+	z-index: 1;
+	height: 50px;
+	background-color: white;
+	box-shadow: 0 2px 6px 0 rgba(0,0,0,0.17);
+	box-sizing: border-box;
+}
+
+.navbar-default{
+	width: 100%;
+	position: fixed;
+	border: none;
+	border-radius: 0px;
+	.navbar-nav>li{
+		img{
+			width: 30px;
+			height: 30px;
+			border-radius: 50%;
+		}
+		a{
+			margin-right:30px;
+			height: 50px;
+			color: $brand;
+			&:hover{
+				color: $background;
+				border-bottom: 2px solid $brand;
+			}
+			&:link{
+				color: $brand;
+			}
+			&:visited{
+				color: $brand;
+			}
+			&:focus{
+				color: $brand;
+			}
+			&:active{
+				color: $brand;
+			}
+		}
+	}
+	.navbar-brand {
+		color: $brand;
+		&:hover{
+			color: $background;
+			border-bottom: 2px solid $brand;
+		}
+		&:link{
+			color: $brand;
+		}
+		&:visited{
+			color: $brand;
+		}
+		&:focus{
+			color: $brand;
+		}
+		&:active{
+			color: $brand;
+		}
+	}
+}
+
+.homeProjects{
+	width: 380px;
+	height: 540px;
+	margin: 20px;
+	box-shadow: 0 2px 6px -2px rgba(22,22,22,0.45);
+	list-style-type: none;
+	div{
+		div{
+			padding: 15px;
+			div{
+				display: inline-flex;
+				img{
+					height: 30px;
+					width: 30px;
+					border-radius: 50%;
+				}
+			}
+			a{
+				text-align: center;
+				display: block;
+			}
+		}
+	}
+}
+
+.projectsContent{
+	margin-top: 70px;
+	margin-bottom: 70px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-around;
+	img{
+		width: 100%;
+		height:250px;
+	}
+}
+
+footer {
+	background: $brand;
+	height: 80px;
+	width: 100%;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	p{
+		color: white;
+	}
+	
+}
+
+.startProject{
+	padding-top:80px;
+	text-align: center;
+	margin-bottom: 40px;
+	h1{
+		margin-bottom: 100px;
+	}
+	form{
+		padding-top: 30px;
+		min-height: 340px;
+		box-shadow: 0 2px 6px -2px rgba(22,22,22,0.45);
+		input{
+			margin-top:20px;
+		}
+		.col-md-6{
+			input{
+				padding: 5px;
+				box-shadow: 0 2px 6px 0 rgba(0,0,0,0.17);
+				width: 100%;
+				margin-top: 0px;
+				margin-bottom: 15px;
+				display: block;
+				border: 0;
+				border-radius:5px;
+				outline: 0;
+				&:focus {
+					box-shadow: 0 0px 2px rgba(22,22,22, 1);
+				}
+			}
+			textarea{
+				resize: none;
+				border: 0;
+				border-radius:5px;
+				outline: 0;
+				margin-bottom: 15px;
+				box-shadow: 0 2px 6px 0 rgba(0,0,0,0.17);
+				&:focus {
+					box-shadow: 0 0px 2px rgba(22,22,22, 1);
+				}
+			}
+		}
+	}
+}
+
+
+.projectPageMenu{
+	padding-top:80px;
+	ul{
+		width:100%;
+		list-style-type:none;
+		font-size:24px;
+		display:inline-flex;
+		justify-content: space-around;
+		margin-bottom:0;
+		margin-top:20px;
+		border-radius:5px;
+		box-shadow: 0 2px 6px 0 rgba(0,0,0,0.17);
+		box-sizing: border-box;
+		li{
+			a{
+				color: $brand;
+				&:hover{
+					color: $background;
+					border-bottom: 2px solid $brand;
+				}
+				&:visited{
+					color: $brand;
+					border-bottom: 2px solid $brand;
+				}
+				&:focus{
+					color: $brand;
+					border-bottom: 2px solid $brand;
+				}
+				&:active{
+					color: $brand;
+					border-bottom: 2px solid $brand;
+				}
+			}
+		}
+	}
+}
+
+.projectPageContent{
+	text-align: center;
+	padding-top: 80px;
+	button{
+		margin-bottom:15px;
+	}
+	nav{
+		display: flex;
+		ul{
+			margin: 0px auto;
+			i{
+				font-size: 20px;
+			}
+		}
+	}
+	div{
+		padding-bottom: 50px;
+		div:nth-child(1){
+			div{
+				img{
+					width: 60px;
+					height: 60px;
+					border-radius: 50%;
+				}
+			}
+		}
+		div:nth-child(2){
+			display:block;
+			img{
+				height: 350px;
+			}
+			button{
+				right: 0px;
+			}
+		}
+	}
+}

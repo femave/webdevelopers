@@ -1,87 +1,99 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="mainApp">
 <head>
   <meta charset="UTF-8">
   <title>webdevelopers</title>
   <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css"/>
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
   <header>
-  <nav class="navbar navbar-default">
-      <div class="container">
+    <nav class="navbar navbar-default">
 
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <a class="navbar-brand" href="#">
-            <img alt="Brand" src="...">
-          </a>
-
-          <a class= "navbar-right" href="#"><button type="button" class="btn btn-default navbar-btn">Sign in</button></a>
-          <a class= "navbar-right" href="C:\Users\usuario\Documents\Marc\skylab\End-project\public\pages\home.html"><button type="button" class="btn btn-default navbar-btn">Log in</button></a>
-        </div>
-
-      </div>
-    </nav>
-  </header>
-  <h1>Home/Login Page</h1>
-  <div style="margin-bottom: 450px;"></div>
-
-  <footer>
-    <div class="footer" id="footer">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-4">
-            <h3> Contact </h3>
-            <ul>
-              <li> <a href="#"> Lorem Ipsum </a> </li>
-              <li> <a href="#"> Lorem Ipsum </a> </li>
-              <li> <a href="#"> Lorem Ipsum </a> </li>
-              <li> <a href="#"> Lorem Ipsum </a> </li>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <a class="navbar-brand" ng-href="#!/home">
+          <img alt="Brand" src="">
+        </a>
+        <ul class="nav navbar-nav">
+          <li><a ng-href="#!/project">Projects</a></li>
+          <li><a ng-href="#!/start-project">Start project</a></li>
+        </ul>
+        
+        <ul class="nav navbar-nav navbar-right">
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="https://s-media-cache-ak0.pinimg.com/originals/cc/03/be/cc03bea7894a8c3ba9aa2688894a88a7.jpg" alt=""></a>
+            <ul class="dropdown-menu">
+              <li><a href="#!/mi-perfil">Perfil</a></li>
+              <li><a href="#!/project">Mis proyectos</a></li>
+              <li><a href="#!/favoritos">Proyectos favoritos</a></li>
+              <li role="separator" class="divider"></li>
+              <li><a href="indexLog.html">Log out</a></li>
             </ul>
-          </div>
-          <div class="col-md-4">
-            <h3> Important Links </h3>
-            <ul>
-              <li> <a href="#"> Admission </a> </li>
-              <li> <a href="#"> Academic </a> </li>
-              <li> <a href="#"> Career </a> </li>
-              <li> <a href="#"> Administration </a> </li>
-              <li> <a href="#"> Notice </a> </li>
-              <li> <a href="#"> Tender </a> </li>
-              <li> <a href="login.php"> Teacher Login </a> </li>
-            </ul>
-          </div>
-          <div class="col-md-4">
-            <h3> Location </h3>
-            <ul>
-              <li> <a href="#"> Lorem Ipsum </a> </li>
-              <li> <a href="#"> Lorem Ipsum </a> </li>
-              <li> <a href="#"> Lorem Ipsum </a> </li>
-              <li> <a href="#"> Lorem Ipsum </a> </li>
-            </ul>
-          </div>
-        </div>
-        <!--/.row-->
-      </div>
-      <!--/.container-->
-    </div>
-    <!--/.footer-->
-
-    <div class="footer-bottom">
-      <div class="container">
-        <p class="pull-left"> Copyright © 2017, Marc Vergara. All rights reserved.</p>
-        <div class="pull-right">
-          <ul class="nav nav-pills payments">
-            <li><i class="fa fa-cc-visa"></i></li>
-            <li><i class="fa fa-cc-mastercard"></i></li>
-            <li><i class="fa fa-cc-amex"></i></li>
-            <li><i class="fa fa-cc-paypal"></i></li>
           </ul>
         </div>
+      </nav>
+    </header>
+    
+
+    <ng-view></ng-view>
+
+
+
+    <footer>
+      <div class="container">
+        <p class="text-center"> Copyright © 2017, Marc Vergara. All rights reserved.</p>
       </div>
-    </div>
-    <!--/.footer-bottom-->
-  </footer>
-</body>
-</html>
+    </footer>
+
+
+
+
+    <!-- Start Scripts -->
+
+    <!-- Main js -->
+    <script src="js/main.js"></script>
+
+    <!-- jquery, angular, bootstrap -->
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular-route/angular-route.min.js"></script>
+
+
+    <!-- app js -->
+    <script src="js/app.js"></script>
+
+    <!-- route home -->
+    <script src="js/routes/home/index.js"></script>
+    <script src="js/routes/home/controller.js"></script>
+
+    <!-- route mi Perfil -->
+    <script src="js/routes/miPerfil/index.js"></script>
+    <script src="js/routes/miPerfil/controller.js"></script>
+
+    <!-- route Projects -->
+    <script src="js/routes/project/index.js"></script>
+    <script src="js/routes/project/controller.js"></script>
+
+    <!-- route Project Page -->
+    <script src="js/routes/projectPage/index.js"></script>
+    <script src="js/routes/projectPage/controller.js"></script>
+
+    <!-- route start Project -->
+    <script src="js/routes/startProject/index.js"></script>
+    <script src="js/routes/startProject/controller.js"></script>
+
+    <!-- route favoritos -->
+    <script src="js/routes/favoritos/index.js"></script>
+    <script src="js/routes/favoritos/controller.js"></script>
+
+    <!-- route mis proyectos -->
+    <script src="js/routes/misProyectos/index.js"></script>
+    <script src="js/routes/misProyectos/controller.js"></script>
+  </body>
+
+  </html>
+
+
+

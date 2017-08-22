@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
 	<title>webdevelopers</title>
 	<link rel="stylesheet" href="../css/normalize.css">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+	<link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css"/>
 	<link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
@@ -17,44 +17,27 @@
 						<img alt="Brand" src="...">
 					</a>
 					<ul class="nav navbar-nav">
-						<li><a href="C:\Users\usuario\Documents\Marc\skylab\End-project\public\pages\explore.html">Explore</a></li>
 						<li><a href="C:\Users\usuario\Documents\Marc\skylab\End-project\public\pages\project.html">Projects</a></li>
 						<li><a href="C:\Users\usuario\Documents\Marc\skylab\End-project\public\pages\startProject.html">Start project</a></li>
 					</ul>
 					
 					<ul class="nav navbar-nav navbar-right">
-						<li><a href="#">Perfil</a></li>
-						<a href="C:\Users\usuario\Documents\Marc\skylab\End-project\public\index.html"><button type="button" class="btn btn-default navbar-btn">Log out</button></a>
-					</ul>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Foto con cara usuario <span class="caret"></span></a>
+							<ul class="dropdown-menu">
+								<li><a href="C:\Users\usuario\Documents\Marc\skylab\End-project\public\pages\miPerfil.html">Perfil</a></li>
+								<li><a href="C:\Users\usuario\Documents\Marc\skylab\End-project\public\pages\project.html">Mis proyectos</a></li>
+								<li><a href="C:\Users\usuario\Documents\Marc\skylab\End-project\public\pages\project.html">Proyectos favoritos</a></li>
+								<li role="separator" class="divider"></li>
+								<li><a href="C:\Users\usuario\Documents\Marc\skylab\End-project\public\index.html">Log out</a></li>
+							</ul>
+						</ul>
 
-					
+
+					</div>
+
 				</div>
-
-			</div>
-		</nav>
-		<nav class="navbar navbar-default">
-			<div class="container">
-
-				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-					<a class="navbar-brand" href="C:\Users\usuario\Documents\Marc\skylab\End-project\public\pages\home.html">
-						<img alt="Brand" src="...">
-					</a>
-					<ul class="nav navbar-nav">
-						<li><a href="C:\Users\usuario\Documents\Marc\skylab\End-project\public\pages\explore.html">Explore</a></li>
-						<li><a href="C:\Users\usuario\Documents\Marc\skylab\End-project\public\pages\project.html">Projects</a></li>
-						<li><a href="C:\Users\usuario\Documents\Marc\skylab\End-project\public\pages\startProject.html">Start project</a></li>
-					</ul>
-					
-					<ul class="nav navbar-nav navbar-right">
-						<li><a href="#">Perfil</a></li>
-						<a href="C:\Users\usuario\Documents\Marc\skylab\End-project\public\index.html"><button type="button" class="btn btn-default navbar-btn">Log out</button></a>
-					</ul>
-
-					
-				</div>
-
-			</div>
-		</nav>
+			</nav>
 
 	</header>
 	<h1>Projects Page</h1>
@@ -142,9 +125,19 @@
 		<!--/.footer-bottom-->
 	</footer>
 
+
+
+
+	<!-- Start Scripts -->
+
+	<!-- Main js -->
 	<script src="../js/main.js"></script>
+
+	<!-- jquery -->
+	<script src="../bower_components/jquery/dist/jquery.min.js"></script>
+
+	<!-- bootstrap js -->
+	<script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
 </body>
 </html>
-
-
-
