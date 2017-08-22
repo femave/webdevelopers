@@ -1,3 +1,10 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway");
+h1, h2, h3, h4, h5, h6, p, a {
+  font-family: 'Raleway', sans-serif; }
+
+p {
+  font-size: 16px; }
+
 .headerImage {
   background: url("https://images.alphacoders.com/109/109221.jpg") no-repeat center;
   min-height: 500px; }
@@ -15,12 +22,50 @@
     font-size: 18px;
     color: #E2F7FF; }
 
+.loginPage {
+  background: url("http://omicrono.elespanol.com/wp-content/uploads/2015/11/programacion.jpg") no-repeat center center fixed;
+  background-size: cover;
+  min-height: 500px; }
+  .loginPage .bgBlack {
+    background-color: rgba(0, 0, 0, 0.6);
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    -webkit-flex-flow: column; }
+  .loginPage h1 {
+    font-size: 48px;
+    color: #E2F7FF; }
+  .loginPage p {
+    font-size: 18px;
+    color: #E2F7FF; }
+
+.loginPageWhoWeAre {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  min-height: 500px; }
+
 .navbar {
   z-index: 1;
   height: 50px;
   background-color: white;
   box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.17);
   box-sizing: border-box; }
+  .navbar .dropdown-menu a {
+    height: 35px !important; }
+    .navbar .dropdown-menu a:hover {
+      background-color: white;
+      color: #E2F7FF;
+      border-bottom: 2px solid #4B717F; }
+    .navbar .dropdown-menu a:link {
+      color: #4B717F; }
+    .navbar .dropdown-menu a:visited {
+      color: #4B717F; }
+    .navbar .dropdown-menu a:focus {
+      color: #4B717F; }
+    .navbar .dropdown-menu a:active {
+      color: #4B717F; }
 
 .navbar-default {
   width: 100%;
@@ -28,11 +73,11 @@
   border: none;
   border-radius: 0px; }
   .navbar-default .navbar-nav > li img {
-    width: 30px;
-    height: 30px;
+    margin-top: -7px;
+    width: 40px;
+    height: 40px;
     border-radius: 50%; }
   .navbar-default .navbar-nav > li a {
-    margin-right: 30px;
     height: 50px;
     color: #4B717F; }
     .navbar-default .navbar-nav > li a:hover {
@@ -62,7 +107,7 @@
 
 .homeProjects {
   width: 380px;
-  height: 540px;
+  height: 560px;
   margin: 20px;
   box-shadow: 0 2px 6px -2px rgba(22, 22, 22, 0.45);
   list-style-type: none; }
@@ -85,7 +130,7 @@
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: space-around; }
+  justify-content: space-between; }
   .projectsContent img {
     width: 100%;
     height: 250px; }
@@ -139,6 +184,7 @@ footer {
   padding-top: 80px; }
   .projectPageMenu ul {
     width: 100%;
+    height: 57px;
     list-style-type: none;
     font-size: 24px;
     display: inline-flex;
@@ -151,7 +197,7 @@ footer {
     .projectPageMenu ul li a {
       color: #4B717F; }
       .projectPageMenu ul li a:hover {
-        color: #E2F7FF;
+        color: #4B717F;
         border-bottom: 2px solid #4B717F; }
       .projectPageMenu ul li a:visited {
         color: #4B717F;
@@ -174,15 +220,93 @@ footer {
       margin: 0px auto; }
       .projectPageContent nav ul i {
         font-size: 20px; }
-  .projectPageContent div {
-    padding-bottom: 50px; }
-    .projectPageContent div div:nth-child(1) div img {
+  .projectPageContent div .titleContent {
+    background: url("http://omicrono.elespanol.com/wp-content/uploads/2015/11/programacion.jpg") no-repeat center center fixed;
+    background-size: cover;
+    color: white; }
+    .projectPageContent div .titleContent .bgBlack {
+      background-color: rgba(0, 0, 0, 0.6);
+      min-height: 500px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      -webkit-flex-flow: column; }
+    .projectPageContent div .titleContent div img {
       width: 60px;
       height: 60px;
       border-radius: 50%; }
-    .projectPageContent div div:nth-child(2) {
-      display: block; }
-      .projectPageContent div div:nth-child(2) img {
-        height: 350px; }
-      .projectPageContent div div:nth-child(2) button {
-        right: 0px; }
+  .projectPageContent div .developersContent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 500px; }
+    .projectPageContent div .developersContent img {
+      height: 350px; }
+    .projectPageContent div .developersContent button {
+      right: 0px; }
+  .projectPageContent div .descriptionContent {
+    background: url("http://omicrono.elespanol.com/wp-content/uploads/2015/11/programacion.jpg") no-repeat center center fixed;
+    background-size: cover;
+    color: white; }
+    .projectPageContent div .descriptionContent .bgBlack {
+      background-color: rgba(0, 0, 0, 0.6);
+      min-height: 500px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      -webkit-flex-flow: column; }
+  .projectPageContent div .socialMediaShare {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 200px;
+    -webkit-flex-flow: column; }
+
+.miProfile form {
+  padding-top: 30px;
+  min-height: 340px;
+  box-shadow: 0 2px 6px -2px rgba(22, 22, 22, 0.45); }
+  .miProfile form input {
+    margin-top: 0px; }
+
+.miProfile input {
+  display: block;
+  margin: 0 auto;
+  padding: 5px;
+  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.17);
+  width: 70%;
+  margin-top: 0px;
+  margin-bottom: 15px;
+  display: block;
+  border: 0;
+  border-radius: 5px;
+  outline: 0; }
+  .miProfile input:focus {
+    box-shadow: 0 0px 2px #161616; }
+
+.miProfileData {
+  padding-top: 30px;
+  padding-bottom: 15px;
+  text-align: left;
+  min-height: 340px;
+  box-shadow: 0 2px 6px -2px rgba(22, 22, 22, 0.45); }
+  .miProfileData img {
+    margin: 0 auto;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    margin-bottom: 20px; }
+  .miProfileData ul li {
+    border-bottom: 1px solid black;
+    list-style-type: none; }
+    .miProfileData ul li p {
+      margin-top: 5px;
+      margin-bottom: 0px; }
+  .miProfileData ul ul li {
+    border-bottom: 0px; }
+
+.developersNeeded {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 10px !important; }

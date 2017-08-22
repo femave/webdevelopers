@@ -1,99 +1,217 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="mainApp">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>webdevelopers</title>
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css"/>
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="../css/normalize.css">
+  <link rel="stylesheet" href="../bower_components/bootstrap/dist/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
   <header>
     <nav class="navbar navbar-default">
-
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <a class="navbar-brand" ng-href="#!/home">
-          <img alt="Brand" src="">
-        </a>
-        <ul class="nav navbar-nav">
-          <li><a ng-href="#!/project">Projects</a></li>
-          <li><a ng-href="#!/start-project">Start project</a></li>
-        </ul>
-        
-        <ul class="nav navbar-nav navbar-right">
-          <li class="dropdown">
-            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="https://s-media-cache-ak0.pinimg.com/originals/cc/03/be/cc03bea7894a8c3ba9aa2688894a88a7.jpg" alt=""></a>
-            <ul class="dropdown-menu">
-              <li><a href="#!/mi-perfil">Perfil</a></li>
-              <li><a href="#!/project">Mis proyectos</a></li>
-              <li><a href="#!/favoritos">Proyectos favoritos</a></li>
-              <li role="separator" class="divider"></li>
-              <li><a href="indexLog.html">Log out</a></li>
-            </ul>
-          </ul>
-        </div>
-      </nav>
-    </header>
-    
-
-    <ng-view></ng-view>
-
-
-
-    <footer>
       <div class="container">
-        <p class="text-center"> Copyright © 2017, Marc Vergara. All rights reserved.</p>
+
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <a class="navbar-brand" href="#">
+            <img alt="WebDeveloper" src="">
+          </a>
+
+          <a class="navbar-right" href="#"><button class="btn btn-success navbar-btn" href="#signup" data-toggle="modal" data-target=".bs-modal-sm">Sign In/ Register</button></a>
+
+        </div>
+
       </div>
-    </footer>
+    </nav>
+  </header>
+
+   <div class="loginPage">
+  <div class="bgBlack">
+    <div class="container">
+      <h1>Create your account!</h1>
+      <p>Start your project and get help of the comunity! Create your teams with your mates to realize your own projects</p>
+      <button class="btn btn-primary btn-lg" href="#signup" data-toggle="modal" data-target=".bs-modal-sm">Sign In/ Register</button>
+    </div>
+  </div>
+</div>
+<div class="loginPageWhoWeAre">   
+  <div class="container">
+    <h1>What's this web?</h1>
+    <p>This web is about creating developers collaborative projects, you can upload your project and get help of the comunity if you needed or you can help and collaborate with another projects</p>
+  </div>
+</div>
+<div class="loginPage">
+  <div class="bgBlack"> 
+    <div class="container">
+      <h1>Who i'm?</h1>
+      <p>I'm student from skylab coders apasionate in tech and web development</p>
+      <button class="btn btn-primary btn-lg" href="#signup" data-toggle="modal" data-target=".bs-modal-contact">Contact me</button>
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal contact me -->
+<div class="modal fade bs-modal-contact" id="myModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <br>
+      <div class="modal-body">
+        <div id="myTabContent" class="tab-content">
+          <div class="tab-pane fade active in" id="signin">
+            <form class="form-horizontal">
+              <fieldset>
+                <!-- Sign In Form -->
+
+                <!-- Text input-->
+                <div class="control-group">
+                  <div class="controls">
+                    <input id="userid" name="userid" type="mail" class="form-control" placeholder="Mail" class="input-medium" required>
+                  </div>
+                </div>
+
+                <!-- Message input-->
+                <div class="control-group">
+                  <div class="controls">
+                    <textarea name="" id="" cols="35" rows="4" placeholder="Enter your message"></textarea>
+                  </div>
+                </div>
+
+                <!-- Button -->
+                <div class="control-group">
+                  <label class="control-label" for="signin"></label>
+                  <div class="controls">
+                    <button id="signin" name="signin" class="btn btn-success">Send</button>
+                  </div>
+                </div>
+              </fieldset>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <center>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </center>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Modal Login register -->
+<div class="modal fade bs-modal-sm" id="myModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <br>
+      <div class="bs-example bs-example-tabs">
+        <ul id="myTab" class="nav nav-tabs">
+          <li class="active"><a href="#signinn" data-toggle="tab">Sign In</a></li>
+          <li class=""><a href="#signup" data-toggle="tab">Register</a></li>
+        </ul>
+      </div>
+      <div class="modal-body">
+        <div id="myTabContent" class="tab-content">
+          <div class="tab-pane fade active in" id="signinn">
+            <form class="form-horizontal">
+              <fieldset>
+
+                <!-- Text input-->
+                <div class="control-group">
+                  <div class="controls">
+                    <input type="text" class="form-control" placeholder="Username" class="input-medium">
+                  </div>
+                </div>
+
+                <!-- Password input-->
+                <div class="control-group">
+                  <div class="controls">
+                    <input class="form-control" type="password" placeholder="Password" class="input-medium">
+                  </div>
+                </div>
+
+                <!-- Button -->
+                <div class="control-group">
+                  <!-- <label class="control-label" for="signin"></label> -->
+                  <!-- <div class="controls"> -->
+                  <button class="btn btn-success"><a href="app/">Sign In</a></button>
+                  <!-- </div> -->
+                </div>
+              </fieldset>
+            </form>
+          </div>
+
+          <div class="tab-pane fade" id="signup">
+            <form class="form-horizontal">
+              <fieldset>
+                <!-- Sign Up Form -->
+                <!-- Text input-->
+                <div class="control-group">
+                  <div class="controls">
+                    <input id="Email" name="Email" class="form-control" type="text" placeholder="Mail" class="input-large" required>
+                  </div>
+                </div>
+
+                <!-- Username input-->
+                <div class="control-group">
+                  <div class="controls">
+                    <input id="Username" name="Username" class="form-control" type="text" placeholder="Username" class="input-large" required>
+                  </div>
+                </div>
+
+                <!-- Password input-->
+                <div class="control-group">
+                  <div class="controls">
+                    <input id="password" name="password" class="form-control" type="password" placeholder="Password" class="input-large" required="">
+                  </div>
+                </div>
+
+                <!-- Text input-->
+                <div class="control-group">
+                  <div class="controls">
+                    <input id="reenterpassword" class="form-control" name="reenterpassword" type="password" placeholder="Comfirm password" class="input-large" required="">
+                  </div>
+                </div>
+
+                <!-- Button -->
+                <div class="control-group">
+                  <label class="control-label" for="confirmsignup"></label>
+                  <div class="controls">
+                    <button id="confirmsignup" name="confirmsignup" class="btn btn-success">Sign Up</button>
+                  </div>
+                </div>
+
+              </fieldset>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <center>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </center>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 
 
-    <!-- Start Scripts -->
-
-    <!-- Main js -->
-    <script src="js/main.js"></script>
-
-    <!-- jquery, angular, bootstrap -->
-    <script src="bower_components/jquery/dist/jquery.min.js"></script>
-    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="bower_components/angular/angular.min.js"></script>
-    <script src="bower_components/angular-route/angular-route.min.js"></script>
-
-
-    <!-- app js -->
-    <script src="js/app.js"></script>
-
-    <!-- route home -->
-    <script src="js/routes/home/index.js"></script>
-    <script src="js/routes/home/controller.js"></script>
-
-    <!-- route mi Perfil -->
-    <script src="js/routes/miPerfil/index.js"></script>
-    <script src="js/routes/miPerfil/controller.js"></script>
-
-    <!-- route Projects -->
-    <script src="js/routes/project/index.js"></script>
-    <script src="js/routes/project/controller.js"></script>
-
-    <!-- route Project Page -->
-    <script src="js/routes/projectPage/index.js"></script>
-    <script src="js/routes/projectPage/controller.js"></script>
-
-    <!-- route start Project -->
-    <script src="js/routes/startProject/index.js"></script>
-    <script src="js/routes/startProject/controller.js"></script>
-
-    <!-- route favoritos -->
-    <script src="js/routes/favoritos/index.js"></script>
-    <script src="js/routes/favoritos/controller.js"></script>
-
-    <!-- route mis proyectos -->
-    <script src="js/routes/misProyectos/index.js"></script>
-    <script src="js/routes/misProyectos/controller.js"></script>
-  </body>
-
-  </html>
 
 
 
+
+  <footer>
+    <div class="container">
+      <p class="text-center"> Copyright © 2017, Marc Vergara. All rights reserved.</p>
+    </div>
+  </footer>
+  
+  <!-- jquery, angular, bootstrap, route -->
+  <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+
+
+</body>
+</html>

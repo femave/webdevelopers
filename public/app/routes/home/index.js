@@ -1,8 +1,8 @@
 angular.module('mainApp')
 .config(function ($routeProvider) {
   $routeProvider
-	.when('/start-project', {
-	  templateUrl: 'js/routes/startProject/template.html',
+	.when('/', {
+	  templateUrl: 'routes/home/template.html',
 	  controller: 'homeController'
 })
 })

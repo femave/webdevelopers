@@ -12,9 +12,6 @@ app.use(express.static(path.join(process.cwd(), 'public')))
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
-app.set('view engine', 'pug')
-
-app.use('/', principalPage)
 
 app.listen(PORT)
 console.log(`Listening at port ${PORT}`)

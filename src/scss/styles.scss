@@ -1,7 +1,16 @@
 $brand: #4B717F;
 $interactive: #77B4CC;	
 $background: #E2F7FF;   //Text color & background
-$hover: #95E1FF;		//Text color when background = $background		
+$hover: #95E1FF;		//Text color when background = $background
+
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
+h1, h2, h3, h4, h5, h6, p, a{
+	font-family: 'Raleway', sans-serif;
+}
+p{
+	font-size:16px;
+}
 
 .headerImage{
 	background: url('https://images.alphacoders.com/109/109221.jpg') no-repeat center;
@@ -25,12 +34,63 @@ $hover: #95E1FF;		//Text color when background = $background
 	
 }
 
+.loginPage{
+	background: url('http://omicrono.elespanol.com/wp-content/uploads/2015/11/programacion.jpg') no-repeat center center fixed;
+	background-size: cover;
+	min-height: 500px;
+	.bgBlack{
+		background-color: rgba(0,0,0,0.6);
+		min-height: 500px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		-webkit-flex-flow: column;
+	}
+	h1{
+		font-size: 48px;
+		color: $background;
+	}
+	p{
+		font-size: 18px;
+		color: $background;
+	}
+}
+
+.loginPageWhoWeAre{
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	min-height:500px
+}
+
 .navbar{
 	z-index: 1;
 	height: 50px;
 	background-color: white;
 	box-shadow: 0 2px 6px 0 rgba(0,0,0,0.17);
 	box-sizing: border-box;
+	.dropdown-menu{
+		a{
+			height:35px !important;
+			&:hover{
+				background-color: white;
+				color: $background;
+				border-bottom: 2px solid $brand;
+			}
+			&:link{
+				color: $brand;
+			}
+			&:visited{
+				color: $brand;
+			}
+			&:focus{
+				color: $brand;
+			}
+			&:active{
+				color: $brand;
+			}
+		}
+	}
 }
 
 .navbar-default{
@@ -40,12 +100,12 @@ $hover: #95E1FF;		//Text color when background = $background
 	border-radius: 0px;
 	.navbar-nav>li{
 		img{
-			width: 30px;
-			height: 30px;
+			margin-top: -7px;
+			width: 40px;
+			height: 40px;
 			border-radius: 50%;
 		}
 		a{
-			margin-right:30px;
 			height: 50px;
 			color: $brand;
 			&:hover{
@@ -89,7 +149,7 @@ $hover: #95E1FF;		//Text color when background = $background
 
 .homeProjects{
 	width: 380px;
-	height: 540px;
+	height: 560px;
 	margin: 20px;
 	box-shadow: 0 2px 6px -2px rgba(22,22,22,0.45);
 	list-style-type: none;
@@ -119,7 +179,7 @@ $hover: #95E1FF;		//Text color when background = $background
 	flex-direction: row;
 	flex-wrap: wrap;
 	align-items: center;
-	justify-content: space-around;
+	justify-content: space-between;
 	img{
 		width: 100%;
 		height:250px;
@@ -189,6 +249,7 @@ footer {
 	padding-top:80px;
 	ul{
 		width:100%;
+		height:57px;
 		list-style-type:none;
 		font-size:24px;
 		display:inline-flex;
@@ -202,7 +263,7 @@ footer {
 			a{
 				color: $brand;
 				&:hover{
-					color: $background;
+					color: $brand;
 					border-bottom: 2px solid $brand;
 				}
 				&:visited{
@@ -238,8 +299,18 @@ footer {
 		}
 	}
 	div{
-		padding-bottom: 50px;
-		div:nth-child(1){
+		.titleContent{
+			background: url("http://omicrono.elespanol.com/wp-content/uploads/2015/11/programacion.jpg")no-repeat center center fixed;
+			background-size: cover;
+			color: white;
+			.bgBlack{
+				background-color: rgba(0,0,0,0.6);
+				min-height: 500px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				-webkit-flex-flow: column;
+			}
 			div{
 				img{
 					width: 60px;
@@ -248,8 +319,11 @@ footer {
 				}
 			}
 		}
-		div:nth-child(2){
-			display:block;
+		.developersContent{
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			min-height: 500px;
 			img{
 				height: 350px;
 			}
@@ -257,5 +331,87 @@ footer {
 				right: 0px;
 			}
 		}
+		.descriptionContent{
+			background: url("http://omicrono.elespanol.com/wp-content/uploads/2015/11/programacion.jpg")no-repeat center center fixed;
+			background-size: cover;
+			color: white;
+			.bgBlack{
+				background-color: rgba(0,0,0,0.6);
+				min-height: 500px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				-webkit-flex-flow: column;
+			}
+		}
+		.socialMediaShare{
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			min-height: 200px;
+			-webkit-flex-flow: column;
+		}
 	}
+}
+
+.miProfile{
+	form{
+		padding-top: 30px;
+		min-height: 340px;
+		box-shadow: 0 2px 6px -2px rgba(22,22,22,0.45);
+		input{
+			margin-top:0px;
+		}
+	}
+	input{
+		display:block;
+		margin: 0 auto;
+		padding: 5px;
+		box-shadow: 0 2px 6px 0 rgba(0,0,0,0.17);
+		width: 70%;
+		margin-top: 0px;
+		margin-bottom: 15px;
+		display: block;
+		border: 0;
+		border-radius:5px;
+		outline: 0;
+		&:focus {
+			box-shadow: 0 0px 2px rgba(22,22,22, 1);
+		}
+	}
+}
+
+.miProfileData{
+	padding-top: 30px;
+	padding-bottom: 15px;
+	text-align: left;
+	min-height: 340px;
+	box-shadow: 0 2px 6px -2px rgba(22,22,22,0.45);
+	img{
+		margin: 0 auto;
+		height: 60px;
+		width: 60px;
+		border-radius:50%;
+		margin-bottom:20px;
+	}
+	ul{
+		li{
+			border-bottom: 1px solid black;
+			list-style-type: none;
+			p{
+				margin-top: 5px;
+				margin-bottom: 0px;
+			}
+		}
+		ul li{
+			border-bottom: 0px;
+		}
+	}
+}
+
+.developersNeeded{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding-bottom:10px !important;
 }
