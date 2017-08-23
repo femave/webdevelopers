@@ -45,6 +45,8 @@ p {
   flex-wrap: wrap;
   align-items: center;
   min-height: 500px; }
+  .loginPageWhoWeAre div div {
+    margin-top: 20px; }
 
 .navbar {
   z-index: 1;
@@ -107,21 +109,27 @@ p {
 
 .homeProjects {
   width: 380px;
-  height: 560px;
+  height: 580px;
   margin: 20px;
   box-shadow: 0 2px 6px -2px rgba(22, 22, 22, 0.45);
   list-style-type: none; }
   .homeProjects div div {
-    padding: 15px; }
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    height: 330px; }
     .homeProjects div div div {
-      display: inline-flex; }
+      text-align: center; }
       .homeProjects div div div img {
+        align-self: center;
         height: 30px;
         width: 30px;
         border-radius: 50%; }
     .homeProjects div div a {
       text-align: center;
       display: block; }
+      .homeProjects div div a button {
+        width: 100%; }
 
 .projectsContent {
   margin-top: 70px;
@@ -134,6 +142,8 @@ p {
   .projectsContent img {
     width: 100%;
     height: 250px; }
+    .projectsContent img:hover {
+      cursor: pointer; }
 
 footer {
   background: #4B717F;
@@ -154,7 +164,7 @@ footer {
     margin-bottom: 100px; }
   .startProject form {
     padding-top: 30px;
-    min-height: 340px;
+    min-height: 640px;
     box-shadow: 0 2px 6px -2px rgba(22, 22, 22, 0.45); }
     .startProject form input {
       margin-top: 20px; }
@@ -170,14 +180,15 @@ footer {
       outline: 0; }
       .startProject form .col-md-6 input:focus {
         box-shadow: 0 0px 2px #161616; }
-    .startProject form .col-md-6 textarea {
+    .startProject form textarea {
       resize: none;
       border: 0;
+      width: 100%;
       border-radius: 5px;
       outline: 0;
       margin-bottom: 15px;
       box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.17); }
-      .startProject form .col-md-6 textarea:focus {
+      .startProject form textarea:focus {
         box-shadow: 0 0px 2px #161616; }
 
 .projectPageMenu {
@@ -197,6 +208,7 @@ footer {
     .projectPageMenu ul li a {
       color: #4B717F; }
       .projectPageMenu ul li a:hover {
+        cursor: pointer;
         color: #4B717F;
         border-bottom: 2px solid #4B717F; }
       .projectPageMenu ul li a:visited {
@@ -232,16 +244,15 @@ footer {
       justify-content: center;
       -webkit-flex-flow: column; }
     .projectPageContent div .titleContent div img {
-      width: 60px;
-      height: 60px;
+      width: 80px;
+      height: 80px;
       border-radius: 50%; }
   .projectPageContent div .developersContent {
     display: flex;
     align-items: center;
-    justify-content: center;
     min-height: 500px; }
     .projectPageContent div .developersContent img {
-      height: 350px; }
+      height: 340px; }
     .projectPageContent div .developersContent button {
       right: 0px; }
   .projectPageContent div .descriptionContent {

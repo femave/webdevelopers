@@ -60,7 +60,10 @@ p{
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
-	min-height:500px
+	min-height:500px;
+	div div{
+		margin-top:20px;
+	}
 }
 
 .navbar{
@@ -149,16 +152,20 @@ p{
 
 .homeProjects{
 	width: 380px;
-	height: 560px;
+	height: 580px;
 	margin: 20px;
 	box-shadow: 0 2px 6px -2px rgba(22,22,22,0.45);
 	list-style-type: none;
 	div{
 		div{
 			padding: 15px;
+			display: flex;
+			flex-direction: column;
+			height: 330px;
 			div{
-				display: inline-flex;
+				text-align:center;
 				img{
+					align-self: center;
 					height: 30px;
 					width: 30px;
 					border-radius: 50%;
@@ -167,6 +174,9 @@ p{
 			a{
 				text-align: center;
 				display: block;
+				button{
+					width:100%;
+				}
 			}
 		}
 	}
@@ -183,6 +193,9 @@ p{
 	img{
 		width: 100%;
 		height:250px;
+		&:hover{
+			cursor: pointer;
+		}
 	}
 }
 
@@ -209,7 +222,7 @@ footer {
 	}
 	form{
 		padding-top: 30px;
-		min-height: 340px;
+		min-height: 640px;
 		box-shadow: 0 2px 6px -2px rgba(22,22,22,0.45);
 		input{
 			margin-top:20px;
@@ -229,16 +242,17 @@ footer {
 					box-shadow: 0 0px 2px rgba(22,22,22, 1);
 				}
 			}
-			textarea{
-				resize: none;
-				border: 0;
-				border-radius:5px;
-				outline: 0;
-				margin-bottom: 15px;
-				box-shadow: 0 2px 6px 0 rgba(0,0,0,0.17);
-				&:focus {
-					box-shadow: 0 0px 2px rgba(22,22,22, 1);
-				}
+		}
+		textarea{
+			resize: none;
+			border: 0;
+			width:100%;
+			border-radius:5px;
+			outline: 0;
+			margin-bottom: 15px;
+			box-shadow: 0 2px 6px 0 rgba(0,0,0,0.17);
+			&:focus {
+				box-shadow: 0 0px 2px rgba(22,22,22, 1);
 			}
 		}
 	}
@@ -263,6 +277,7 @@ footer {
 			a{
 				color: $brand;
 				&:hover{
+					cursor: pointer;
 					color: $brand;
 					border-bottom: 2px solid $brand;
 				}
@@ -313,8 +328,8 @@ footer {
 			}
 			div{
 				img{
-					width: 60px;
-					height: 60px;
+					width: 80px;
+					height: 80px;
 					border-radius: 50%;
 				}
 			}
@@ -322,10 +337,10 @@ footer {
 		.developersContent{
 			display: flex;
 			align-items: center;
-			justify-content: center;
+			// justify-content: center;
 			min-height: 500px;
 			img{
-				height: 350px;
+				height: 340px;
 			}
 			button{
 				right: 0px;
