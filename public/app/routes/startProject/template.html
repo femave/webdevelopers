@@ -4,12 +4,19 @@
 		<div class="row">
 			<form action="#">
 				<div class="col-md-6 col-md-offset-3">
-					<input type="text" placeholder="Title">
-					<input type="text" placeholder="Insert programing lenguages">
-					<input type="text" placeholder="Developers needed">
+				<label>Title</label>
+					<input type="text" placeholder="Your title">
+					<label>Insert programming lenguages</label>
+					<input type="text" placeholder="Javascript, css, html,...">
+					<label>Developers you need</label>
+					<input type="text" placeholder="Front Developer, Designer,...">
 					<label>Upload image</label>
-					<textarea rows="4" type="text" placeholder="Insert short description (120 characters)"></textarea>
+					<input type="file" name="pic" accept="image/*">
+					<label>Short description</label>
+					<textarea rows="4" type="text" ng-maxlength='120' placeholder="Insert short description (120 characters)"></textarea>
+					<label>Long description</label>
 					<textarea rows="5" type="text" placeholder="Insert long description"></textarea>
+					<label>Why this project?</label>
 					<textarea rows="4" type="text" placeholder="Why this project (optional)"></textarea>
 					<input class="btn btn-primary" type="submit" value="Start new project">
 				</div>

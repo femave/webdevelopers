@@ -7,8 +7,18 @@
 					<h3>Landon Jaworowski</h3>
 				</div>
 				<div class="col-md-9">
-					<h3>Florissant project</h3>
-					<p>Descripcion corta: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, dolorum ipsam, nisi neque eum doloribus facere, aperiam provident odit quidem aut sint minima illo aliquid porro assumenda? Dolore, officia, magni?</p>
+					<h3 class="hoverProjectPage" ng-mouseover="options=true" ng-mouseleave="options=false" ng-click="enableEditor('title')" ng-hide="editorEnabled">{{title}} <i ng-show="options" class="fa fa-pencil"></i></h3>
+					<div ng-show="editorEnabled">
+						<input type="text" ng-model="title" ng-show="editorEnabled">
+						<button class="btn btn-sm btn-primary" ng-click="save('title')"><i class="fa fa-thumbs-o-up"></i></button>
+						<button class="btn btn-sm btn-danger" ng-click="disableEditor('title')"><i class="fa fa-thumbs-o-down"></i></button>
+					</div>
+					<p class="hoverProjectPage" ng-mouseover="optionsSD=true" ng-mouseleave="optionsSD=false" ng-click="enableEditor('shortDescription')" ng-hide="editorEnabledSD">{{shortDescription}} <i ng-show="optionsSD" class="fa fa-pencil"></i></p>
+					<div ng-show="editorEnabledSD">
+						<textarea type="text" ng-model="shortDescription" ng-show="editorEnabledSD"></textarea>
+						<button class="btn btn-sm btn-primary" ng-click="save('shortDescription')"><i class="fa fa-thumbs-o-up"></i></button>
+						<button class="btn btn-sm btn-danger" ng-click="disableEditor('shortDescription')"><i class="fa fa-thumbs-o-down"></i></button>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -19,10 +29,10 @@
 			<div class="col-md-3 col-md-offset-1">
 				<h3>Developers necesarios:</h3>
 				<div class="developersNeeded">
-					<p class="pull-left">Diseñador</p><a href="#"><button class='pull-right btn btn-default'>Submit</button></a>
+					<p class="pull-left">{{devNeeded[0]}}</p><a href="#"><button class='pull-right btn btn-default'>Join project</button></a>
 				</div>
 				<div class="developersNeeded">
-					<p class="pull-left">Database</p><a href="#"><button class='pull-right btn btn-default'>Submit</button></a>
+					<p class="pull-left">{{devNeeded[1]}}</p><a href="#"><button class='pull-right btn btn-default'>Join project</button></a>
 				</div>
 			</div>
 		</div>
@@ -30,15 +40,26 @@
 			<div class="bgBlack">
 				<div class="col-md-12">
 					<h3>Descripcion larga:</h3>
-					<p>dellenite falconelle semisteel ecospecifically thunderflower Hippocratic tusche geonoma Urticastrum senselessly milden neuropsychological wheezle uncorked increscence unstoic diesel bassarisk shampoo soc temalacatl unvaulting outtower oriency flocker physicologic contradictional Didelphidae horseflesh pronator Varanoid gymnasial partnership multitarian renotification unbiographical osela Sicambrian reminiscitory mangi Mara friskful insapient uncherishing euthermic aggression hydromania subaqueanJacobinical castoreum Mirounga circumnutate unswell Datism Klondiker pseudepiscopy friary thereat nondevelopable overdoctrinize insectean conation beaver ochronotic Brissotine machinal roseine Hepatica gridiron gucki ironfisted procollectivistic</p>
+					<p class="hoverProjectPage" ng-mouseover="optionsLD=true" ng-mouseleave="optionsLD=false" ng-click="enableEditor('longDescription')" ng-hide="editorEnabledLD">{{longDescription}} <i ng-show="optionsLD" class="fa fa-pencil"></i></p>
+					<div ng-show="editorEnabledLD">
+						<textarea rows="7" type="text" ng-model="longDescription" ng-show="editorEnabledLD"></textarea>
+						<button class="btn btn-sm btn-primary" ng-click="save('longDescription')"><i class="fa fa-thumbs-o-up"></i></button>
+						<button class="btn btn-sm btn-danger" ng-click="disableEditor('longDescription')"><i class="fa fa-thumbs-o-down"></i></button>
+					</div>
 				</div>
 				<div class="col-md-12">
 					<h3>Porque este proyecto:</h3>
-					<p>dellenite falconelle semisteel ecospecifically thunderflower Hippocratic tusche geonoma Urticastrum senselessly milden neuropsychological wheezle uncorked increscence unstoic diesel bassarisk shampoo soc </p>
+					<p class="hoverProjectPage" ng-mouseover="optionsWTP=true" ng-mouseleave="optionsWTP=false" ng-click="enableEditor('whyThisProject')" ng-hide="editorEnabledWTP">{{whyThisProject}} <i ng-show="optionsWTP" class="fa fa-pencil"></i></p>
+					<div ng-show="editorEnabledWTP">
+						<textarea rows="7" type="text" ng-model="whyThisProject" ng-show="editorEnabledWTP"></textarea>
+						<button class="btn btn-sm btn-primary" ng-click="save('whyThisProject')"><i class="fa fa-thumbs-o-up"></i></button>
+						<button class="btn btn-sm btn-danger" ng-click="disableEditor('whyThisProject')"><i class="fa fa-thumbs-o-down"></i></button>
+					</div>
 				</div>
 			</div>
 		</div>
 		<div class="socialMediaShare">
+			<button class="btn btn-danger center-block">Delete project</button>
 			<button class="btn btn-primary center-block">Follow this project</button>
 			<nav class="navbar">
 				<ul class="nav navbar-nav">

@@ -12,16 +12,13 @@
   <header>
     <nav class="navbar navbar-default">
       <div class="container">
-
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <a class="navbar-brand" href="#">
             <img alt="WebDeveloper" src="">
           </a>
-
-          <a class="navbar-right" href="#"><button class="btn btn-success navbar-btn" href="#signup" data-toggle="modal" data-target=".bs-modal-sm">Sign In/ Register</button></a>
-
+          <a class="navbar-right" href="#"><button class="btn btn-primary navbar-btn" href="#signup" data-toggle="modal" data-target=".bs-modal-sm">Register</button></a>
+          <a class="navbar-right" href="#"><button class="btn btn-success navbar-btn" href="#signin" data-toggle="modal" data-target=".bs-modal-sm-login">Log In</button></a>
         </div>
-
       </div>
     </nav>
   </header>
@@ -29,9 +26,9 @@
   <div class="loginPage">
     <div class="bgBlack">
       <div class="container">
-        <h1>Create your account!</h1>
-        <p>Start your project and get help of the comunity! Create your teams with your mates to realize your own projects</p>
-        <button class="btn btn-primary btn-lg" href="#signup" data-toggle="modal" data-target=".bs-modal-sm">Sign In/ Register</button>
+        <h1>Start your project and get help of the comunity! Create your teams with your mates to realize your own projects</h1>
+        <p>Create your account!</p>
+        <button class="btn btn-primary btn-lg" href="#signup" data-toggle="modal" data-target=".bs-modal-sm">Register</button>
       </div>
     </div>
   </div>
@@ -55,105 +52,56 @@
   <div class="loginPage">
     <div class="bgBlack"> 
       <div class="container">
-        <h1>Who i'm?</h1>
-        <p>I'm student from skylab coders apasionate in tech and web development</p>
-        <button class="btn btn-primary btn-lg" href="#signup" data-toggle="modal" data-target=".bs-modal-contact">Contact me</button>
-      </div>
-    </div>
-  </div>
+        <div class="row">
+          <div class="col-md-8">
+            <h1>Who I'm?</h1>
+            <p>I'm student from skylab coders apasionate in tech and web development</p>
 
+            <form class="form-horizontal formContact">
+              <fieldset>
 
-  <!-- Modal contact me -->
-  <div class="modal fade bs-modal-contact" id="myModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-sm">
-      <div class="modal-content">
-        <br>
-        <div class="modal-body">
-          <div id="myTabContent" class="tab-content">
-            <div class="tab-pane fade active in" id="signin">
-              <form class="form-horizontal">
-                <fieldset>
-                  <!-- Sign In Form -->
-
-                  <!-- Text input-->
-                  <div class="control-group">
-                    <div class="controls">
-                      <input id="userid" name="userid" type="mail" class="form-control" placeholder="Mail" class="input-medium" required>
-                    </div>
+                <div class="control-group">
+                  <div class="controls">
+                    <input id="userid" name="userid" type="mail" class="form-control" placeholder="Mail" class="input-medium" required>
                   </div>
+                </div>
 
-                  <!-- Message input-->
-                  <div class="control-group">
-                    <div class="controls">
-                      <textarea name="" id="" cols="35" rows="4" placeholder="Enter your message"></textarea>
-                    </div>
+                <!-- Message input-->
+                <div class="control-group">
+                  <div class="controls">
+                    <textarea name="" id="" cols="35" rows="4" placeholder="Enter your message"></textarea>
                   </div>
+                </div>
 
-                  <!-- Button -->
-                  <div class="control-group">
-                    <label class="control-label" for="signin"></label>
-                    <div class="controls">
-                      <button id="signin" name="signin" class="btn btn-success">Send</button>
-                    </div>
+                <!-- Button -->
+                <div class="control-group">
+                  <label class="control-label" for="signin"></label>
+                  <div class="controls">
+                    <button id="signin" name="signin" class="btn btn-success">Send</button>
                   </div>
-                </fieldset>
-              </form>
-            </div>
+                </div>
+              </fieldset>
+            </form>
+          </div>
+          <div class="col-md-4">
+          <a class="thumbnail imageContact">
+            <img class="center-block" src="/images/marc.JPG" alt="">
+            </a>
           </div>
         </div>
-        <div class="modal-footer">
-          <center>
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          </center>
-        </div>
       </div>
     </div>
   </div>
 
 
-  <!-- Modal Login register -->
+
+  <!-- Modal register -->
   <div class="modal fade bs-modal-sm" id="myModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-sm">
       <div class="modal-content">
-        <br>
-        <div class="bs-example bs-example-tabs">
-          <ul id="myTab" class="nav nav-tabs">
-            <li class="active"><a href="#signinn" data-toggle="tab">Sign In</a></li>
-            <li class=""><a href="#signup" data-toggle="tab">Register</a></li>
-          </ul>
-        </div>
         <div class="modal-body">
           <div id="myTabContent" class="tab-content">
-            <div class="tab-pane fade active in" id="signinn">
-              <form class="form-horizontal">
-                <fieldset>
-
-                  <!-- Text input-->
-                  <div class="control-group">
-                    <div class="controls">
-                      <input type="text" class="form-control" placeholder="Username" class="input-medium">
-                    </div>
-                  </div>
-
-                  <!-- Password input-->
-                  <div class="control-group">
-                    <div class="controls">
-                      <input class="form-control" type="password" placeholder="Password" class="input-medium">
-                    </div>
-                  </div>
-
-                  <!-- Button -->
-                  <div class="control-group">
-                    <!-- <label class="control-label" for="signin"></label> -->
-                    <!-- <div class="controls"> -->
-                    <button class="btn btn-success"><a href="app/">Sign In</a></button>
-                    <!-- </div> -->
-                  </div>
-                </fieldset>
-              </form>
-            </div>
-
-            <div class="tab-pane fade" id="signup">
+            <div class="tab-pane fade active in" id="signup">
               <form class="form-horizontal">
                 <fieldset>
                   <!-- Sign Up Form -->
@@ -198,10 +146,45 @@
             </div>
           </div>
         </div>
-        <div class="modal-footer">
-          <center>
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-          </center>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Modal log in -->
+  <div class="modal fade bs-modal-sm-login" id="myModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-body">
+          <div id="myTabContent" class="tab-content">
+            <div class="tab-pane fade active in" id="signinn">
+              <form class="form-horizontal">
+                <fieldset>
+
+                  <!-- Text input-->
+                  <div class="control-group">
+                    <div class="controls">
+                      <input type="text" class="form-control" placeholder="Username" class="input-medium">
+                    </div>
+                  </div>
+
+                  <!-- Password input-->
+                  <div class="control-group">
+                    <div class="controls">
+                      <input class="form-control" type="password" placeholder="Password" class="input-medium">
+                    </div>
+                  </div>
+
+                  <!-- Button -->
+                  <div class="control-group">
+                    <!-- <label class="control-label" for="signin"></label> -->
+                    <!-- <div class="controls"> -->
+                    <button class="btn btn-success"><a href="app/">Sign In</a></button>
+                    <!-- </div> -->
+                  </div>
+                </fieldset>
+              </form>
+            </div>
+          </div>
         </div>
       </div>
     </div>

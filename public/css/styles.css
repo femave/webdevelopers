@@ -34,7 +34,6 @@ p {
     justify-content: center;
     -webkit-flex-flow: column; }
   .loginPage h1 {
-    font-size: 48px;
     color: #E2F7FF; }
   .loginPage p {
     font-size: 18px;
@@ -74,6 +73,8 @@ p {
   position: fixed;
   border: none;
   border-radius: 0px; }
+  .navbar-default button {
+    margin-left: 30px; }
   .navbar-default .navbar-nav > li img {
     margin-top: -7px;
     width: 40px;
@@ -160,11 +161,14 @@ footer {
   padding-top: 80px;
   text-align: center;
   margin-bottom: 40px; }
+  .startProject label {
+    text-align: left;
+    width: 100%; }
   .startProject h1 {
     margin-bottom: 100px; }
   .startProject form {
     padding-top: 30px;
-    min-height: 640px;
+    min-height: 840px;
     box-shadow: 0 2px 6px -2px rgba(22, 22, 22, 0.45); }
     .startProject form input {
       margin-top: 20px; }
@@ -224,6 +228,21 @@ footer {
 .projectPageContent {
   text-align: center;
   padding-top: 80px; }
+  .projectPageContent input[type="text"] {
+    color: white;
+    background-color: transparent;
+    display: block;
+    margin: 0 auto;
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.17);
+    width: 70%;
+    display: block;
+    border-radius: 5px; }
+  .projectPageContent textarea {
+    color: white;
+    background: transparent;
+    resize: none;
+    width: 100%;
+    border-radius: 5px; }
   .projectPageContent button {
     margin-bottom: 15px; }
   .projectPageContent nav {
@@ -232,6 +251,8 @@ footer {
       margin: 0px auto; }
       .projectPageContent nav ul i {
         font-size: 20px; }
+  .projectPageContent div .hoverProjectPage:hover {
+    cursor: pointer; }
   .projectPageContent div .titleContent {
     background: url("http://omicrono.elespanol.com/wp-content/uploads/2015/11/programacion.jpg") no-repeat center center fixed;
     background-size: cover;
@@ -321,3 +342,40 @@ footer {
   align-items: center;
   justify-content: space-between;
   padding-bottom: 10px !important; }
+
+.tab-content {
+  text-align: center;
+  padding: 15px; }
+  .tab-content input {
+    padding: 5px;
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.17);
+    width: 100%;
+    display: block;
+    border: 0;
+    border-radius: 5px;
+    outline: 0;
+    margin-bottom: 10px; }
+    .tab-content input:focus {
+      box-shadow: 0 0px 2px #161616; }
+  .tab-content textarea {
+    resize: none;
+    border: 0;
+    width: 100%;
+    border-radius: 5px;
+    outline: 0;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.17); }
+    .tab-content textarea:focus {
+      box-shadow: 0 0px 2px #161616; }
+
+.formContact input {
+  width: 80%;
+  margin-bottom: 10px; }
+
+.formContact textarea {
+  resize: none;
+  width: 80%;
+  height: 70px; }
+
+.imageContact {
+  margin-top: 47px; }

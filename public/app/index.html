@@ -17,8 +17,9 @@
           <img alt="WebDevelopers" src="">
         </a>
         <ul class="nav navbar-nav">
-          <li><a ng-href="#!/project">Projects</a></li>
           <li><a ng-href="#!/start-project">Start project</a></li>
+          <li><a ng-href="#!/favourites">Favourites</a></li>
+          <li><a ng-href="#!/myProject">My projects <span class="badge">4</span></a></li>
         </ul>
         
         <ul class="nav navbar-nav navbar-right">
@@ -69,9 +70,13 @@
     <script src="routes/miPerfil/index.js"></script>
     <script src="routes/miPerfil/controller.js"></script>
 
-    <!-- route Projects -->
-    <script src="routes/project/index.js"></script>
-    <script src="routes/project/controller.js"></script>
+    <!-- route Favourites -->
+    <script src="routes/favourites/index.js"></script>
+    <script src="routes/favourites/controller.js"></script>
+
+    <!-- route myProject -->
+    <script src="routes/myProject/index.js"></script>
+    <script src="routes/myProject/controller.js"></script>
 
     <!-- route Project Page -->
     <script src="routes/projectPage/index.js"></script>

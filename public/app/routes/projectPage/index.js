@@ -3,6 +3,6 @@ angular.module('mainApp')
   $routeProvider
 	.when('/project-page', {
 	  templateUrl: 'routes/projectPage/template.html',
-	  controller: 'homeController'
+	  controller: 'projectPageController'
 })
 })
