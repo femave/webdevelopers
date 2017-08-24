@@ -237,8 +237,13 @@ footer {
     width: 70%;
     display: block;
     border-radius: 5px; }
-  .projectPageContent textarea {
+  .projectPageContent .shortDescr {
     color: white;
+    background: transparent;
+    resize: none;
+    width: 100%;
+    border-radius: 5px; }
+  .projectPageContent textarea {
     background: transparent;
     resize: none;
     width: 100%;
@@ -269,24 +274,17 @@ footer {
       height: 80px;
       border-radius: 50%; }
   .projectPageContent div .developersContent {
-    display: flex;
-    align-items: center;
-    min-height: 500px; }
+    margin-top: 80px; }
     .projectPageContent div .developersContent img {
       height: 340px; }
     .projectPageContent div .developersContent button {
       right: 0px; }
-  .projectPageContent div .descriptionContent {
-    background: url("http://omicrono.elespanol.com/wp-content/uploads/2015/11/programacion.jpg") no-repeat center center fixed;
-    background-size: cover;
-    color: white; }
-    .projectPageContent div .descriptionContent .bgBlack {
-      background-color: rgba(0, 0, 0, 0.6);
-      min-height: 500px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      -webkit-flex-flow: column; }
+    .projectPageContent div .developersContent input {
+      color: black; }
+    .projectPageContent div .developersContent i {
+      cursor: pointer; }
+      .projectPageContent div .developersContent i:hover {
+        transform: scale(1.2); }
   .projectPageContent div .socialMediaShare {
     display: flex;
     align-items: center;
@@ -379,3 +377,10 @@ footer {
 
 .imageContact {
   margin-top: 47px; }
+
+.btnEditDelate {
+  display: inline-block; }
+
+.affix {
+  right: 100px;
+  top: 180px; }

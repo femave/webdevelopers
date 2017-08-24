@@ -1,5 +1,5 @@
 angular.module('mainApp')
 
-.controller('homeController', function () {
+.controller('myProjectController', function () {
 
 })

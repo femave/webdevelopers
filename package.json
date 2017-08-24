@@ -4,7 +4,7 @@
   "description": "Web about projects collabortive",
   "main": "index.js",
   "scripts": {
-    "prestart":"bower install npm install",
+    "prestart": "npm install bower install",
     "start": "node server/app.js",
     "dev": "nodemon server/app.js",
     "build:scss": "node-sass src/scss/styles.scss public/css/styles.css",
