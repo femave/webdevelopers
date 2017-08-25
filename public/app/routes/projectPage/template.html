@@ -32,6 +32,15 @@
 					<div class="thumbnail">
 						<img class="img-responsive" src="http://www.skylabcoders.com/images/19767/recommended_image_size.png" alt="">
 					</div>
+					<div class="projectPageTag">
+						<button class="btn btn-warning btn-sm" ng-repeat="tag in tags.tag track by $index"><small>{{tag}}</small>  <i ng-show="options" class="fa fa-trash-o" ng-click="deleteTag($index)"></i></button>
+						<button class="btn btn-primary btn-sm" ng-click="enableEditor('tag')" ng-show="options">Add tag</button>
+						<div ng-show="editorEnabledTag">
+						<input type="text" ng-model="Tag">
+						<button class="btn btn-sm btn-primary" ng-click="save('Tag')"><i class="fa fa-thumbs-o-up"></i></button>
+						<button class="btn btn-sm btn-danger" ng-click="disableEditor('Tag')"><i class="fa fa-thumbs-o-down"></i></button>
+					</div>
+					</div>
 					<h3>Descripcion larga:</h3>
 					<p class="hoverProjectPage" ng-click="enableEditor('longDescription')" ng-hide="editorEnabledLD">{{longDescription}} <i ng-show="options" class="fa fa-pencil"></i></p>
 					<div ng-show="editorEnabledLD">

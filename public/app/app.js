@@ -1,1 +1,1 @@
-angular.module('mainApp', ['ngRoute', 'oitozero.ngSweetAlert'])
+angular.module('mainApp', ['ngRoute', 'oitozero.ngSweetAlert', 'ngTagsInput'])

@@ -6,6 +6,9 @@ angular.module('mainApp')
 	$scope.devNeeded = {
 		'dev': ['designer', 'back-end', 'front-end']
 	}
+	$scope.tags = {
+		'tag': ['Javascript', 'Html', 'Css']
+	}
 	$scope.longDescription = 'dellenite falconelle semisteel ecospecifically thunderflower Hippocratic tusche geonoma Urticastrum senselessly milden neuropsychological wheezle uncorked increscence unstoic diesel bassarisk shampoo soc temalacatl unvaulting outtower oriency flocker physicologic contradictional Didelphidae horseflesh pronator Varanoid gymnasial partnership multitarian renotification unbiographical osela Sicambrian reminiscitory mangi Mara friskful insapient uncherishing euthermic aggression hydromania subaqueanJacobinical castoreum Mirounga circumnutate unswell Datism Klondiker pseudepiscopy friary thereat nondevelopable overdoctrinize insectean conation beaver ochronotic Brissotine machinal roseine Hepatica gridiron gucki ironfisted procollectivistic'
 	$scope.whyThisProject = 'dellenite falconelle semisteel ecospecifically thunderflower Hippocratic tusche geonoma Urticastrum senselessly milden neuropsychological wheezle uncorked increscence unstoic diesel bassarisk shampoo soc temalacatl unvaulting outtower oriency flocker physicologic contradictional Didelphidae horseflesh pronator Varanoid gymnasial partnership multitarian renotification unbiographical osela Sicambrian reminiscitory mangi Mara friskful insapient uncherishing euthermic aggression hydromania subaqueanJacobinical castoreum Mirounga circumnutate unswell Datism Klondiker pseudepiscopy friary thereat nondevelopable overdoctrinize insectea'
 	$scope.editorEnabled = false
@@ -23,6 +26,8 @@ angular.module('mainApp')
 			$scope.editorEnabledWTP = true;
 		} else if (toggle == 'developerNeeded') {
 			$scope.editorEnabledDN = true;
+		} else if (toggle == 'tag') {
+			$scope.editorEnabledTag = true;
 		}
 	};
 
@@ -37,6 +42,8 @@ angular.module('mainApp')
 			$scope.editorEnabledWTP = false
 		} else if (toggle == 'developerNeeded') {
 			$scope.editorEnabledDN = false;
+		} else if (toggle == 'Tag') {
+			$scope.editorEnabledTag = false;
 		}
 	};
 
@@ -46,6 +53,8 @@ angular.module('mainApp')
 		if (toggle === 'developerNeeded') {
 			$scope.devNeeded.dev.push($scope.developerNeeded)
 			console.log($scope.devNeeded.dev)
+		} else if (toggle === 'Tag') {
+			$scope.tags.tag.push($scope.Tag)
 		}
 		$scope.disableEditor(toggle);
 	};
@@ -54,6 +63,10 @@ angular.module('mainApp')
 		console.log(index)
 		$scope.devNeeded.dev.splice(index, 1)
 		console.log($scope.devNeeded.dev)
+	}
+
+	$scope.deleteTag = function(index) {
+		$scope.tags.tag.splice(index, 1)
 	}
 
 	$scope.clickMeToShowMessage = function() {

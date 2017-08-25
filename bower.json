@@ -19,6 +19,7 @@
     "angular": "^1.6.6",
     "angular-route": "^1.6.6",
     "font-awesome": "^4.7.0",
-    "ngSweetAlert": "latest"
+    "ngSweetAlert": "latest",
+    "ng-tags-input": "3.2.0"
   }
 }

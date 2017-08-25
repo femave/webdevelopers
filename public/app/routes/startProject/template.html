@@ -3,23 +3,49 @@
 	<div class="container">
 		<div class="row">
 			<form action="#">
-				<div class="col-md-6 col-md-offset-3">
-				<label>Title</label>
-					<input type="text" placeholder="Your title">
+				<div class="col-md-6">
+					<label>Title</label>
+					<input type="text" ng-model="title" placeholder="Your title">
 					<label>Insert programming lenguages</label>
-					<input type="text" placeholder="Javascript, css, html,...">
+					<!-- <input type="text" ng-model="tags" placeholder="Javascript, css, html,..."> -->
+					<tags-input ng-model="tags" placeholder="Add lenguages..."></tags-input>
 					<label>Developers you need</label>
-					<input type="text" placeholder="Front Developer, Designer,...">
+					<input type="text" ng-model="dev" placeholder="Front Developer, Designer,...">
 					<label>Upload image</label>
 					<input type="file" name="pic" accept="image/*">
 					<label>Short description</label>
-					<textarea rows="4" type="text" ng-maxlength='120' placeholder="Insert short description (120 characters)"></textarea>
+					<textarea rows="4" ng-model="shortDesc" type="text" ng-maxlength='120' placeholder="Insert short description (120 characters)"></textarea>
 					<label>Long description</label>
-					<textarea rows="5" type="text" placeholder="Insert long description"></textarea>
+					<textarea rows="5" ng-model="longDesc" type="text" placeholder="Insert long description"></textarea>
 					<label>Why this project?</label>
-					<textarea rows="4" type="text" placeholder="Why this project (optional)"></textarea>
+					<textarea rows="4" ng-model="whyThisProject" type="text" placeholder="Why this project (optional)"></textarea>
 					<input class="btn btn-primary" type="submit" value="Start new project">
 				</div>
+
+				<div class="col-md-6">
+					<ul class="projectsContent">
+						<li class="homeProjects myAffix2" id="affix2">
+							<div>
+								<a href="#!/project-page"><img src="https://ksr-ugc.imgix.net/assets/017/613/234/902b1945bca81c8ce5b28a70a04b78b4_original.png?crop=faces&w=560&h=315&fit=crop&v=1500750535&auto=format&q=92&s=03cd36ad3063a3907ce330abda9f5801" alt=""></a>
+								<div>
+									<div class="homeTag">
+									<button class="btn btn-warning btn-sm" ng-repeat="tag in tags"><small>{{tag.text}}</small></button>
+										<!-- <p ng-repeat="tag in tags"><small>{{tag.text}}</small></p> -->
+									</div>
+									<h4>{{title}}</h4>
+									<p class="textContent">{{shortDesc}}</p>
+									<div>
+										<div>
+											<img src="https://www.corazonblanco.com/media/galeria/44/9/3/0/9/n_real_madrid_los_aficionados-2199039.jpg"><p>de: <small>Cythia Demuizon</small></p>
+										</div>
+										<a href="#!/project-page"><button class="btn btn-primary">Read more</button></a>
+									</div>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+
 			</form>
 		</div>
 	</div>

@@ -2,27 +2,34 @@
   <h1>Update your profile</h1>
   <div class="container">
     <div class="row">
-      <div class="col-md-6 miProfile">
-        <form action="#">
-         <input type="text" placeholder="Change username">
-         <input type="mail" placeholder="Change Mail">
-         <input type="password" placeholder="Change your password">
-         <input type="text" placeholder="Insert programing lenguages">
-         <input class="btn btn-primary" type="submit" value="Update">
-       </form>
-     </div>
-     <div class="col-md-6 miProfileData">
+     <div class="col-md-6 col-md-offset-3 miProfileData">
        <img class="center-block" src="https://s-media-cache-ak0.pinimg.com/originals/cc/03/be/cc03bea7894a8c3ba9aa2688894a88a7.jpg">
        <ul>
-         <li><p>Username</p></li>
-         <li><p>Mail@mail.com</p></li>
+         <li><p ng-hide="editorEnabled">{{username}}  <i ng-click="enableEditor('username')" ng-show="options" class="fa fa-pencil"></i></p></li>
+         <div ng-show="editorEnabled">
+            <input type="text" ng-model="username" ng-show="editorEnabled">
+            <button class="btn btn-sm btn-primary" ng-click="save('username')"><i class="fa fa-thumbs-o-up"></i></button>
+            <button class="btn btn-sm btn-danger" ng-click="disableEditor('username')"><i class="fa fa-thumbs-o-down"></i></button>
+          </div>
+         <li><p ng-hide="editorEnabledMail">{{mail}}  <i ng-click="enableEditor('mail')" ng-show="options" class="fa fa-pencil"></i></p></li>
+         <div ng-show="editorEnabledMail">
+            <input type="text" ng-model="mail" ng-show="editorEnabledMail">
+            <button class="btn btn-sm btn-primary" ng-click="save('mail')"><i class="fa fa-thumbs-o-up"></i></button>
+            <button class="btn btn-sm btn-danger" ng-click="disableEditor('mail')"><i class="fa fa-thumbs-o-down"></i></button>
+          </div>
          <li><p>Lenguages you know:</p></li>
          <ul>
-           <li><p>Javascript</p></li>
-           <li><p>html</p></li>
-           <li><p>css</p></li>
+           <li ng-repeat="leng in lenguages.len track by $index"><p id="{{$index}}">{{leng}}  <i ng-show="options" class="fa fa-trash-o" ng-click="deleteDev($index)"></i></p></li>
+
+          <div ng-show="editorEnabledLeng">
+            <input type="text" ng-model="leng">
+            <button class="btn btn-sm btn-primary" ng-click="save('lenguages')"><i class="fa fa-thumbs-o-up"></i></button>
+            <button class="btn btn-sm btn-danger" ng-click="disableEditor('lenguages')"><i class="fa fa-thumbs-o-down"></i></button>
+          </div>
          </ul>
        </ul>
+       <button class="btn btn-warning" ng-click="options = !options">Edit</button>
+       <button class="btn btn-primary" ng-click="enableEditor('lenguages')" ng-show="options">Add lenguage</button>
      </div>
    </div>
  </div>

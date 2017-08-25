@@ -1,5 +1,11 @@
 angular.module('mainApp')
 
-.controller('homeController', function () {
+.controller('startProjectController', function () {
+
+	$('.myAffix2').affix({
+		offset: {
+			top: 230
+		}
+	})
 
 })

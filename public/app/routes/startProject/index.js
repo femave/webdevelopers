@@ -3,6 +3,6 @@ angular.module('mainApp')
   $routeProvider
 	.when('/start-project', {
 	  templateUrl: 'routes/startProject/template.html',
-	  controller: 'homeController'
+	  controller: 'startProjectController'
 })
 })
