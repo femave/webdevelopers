@@ -158,6 +158,9 @@ i{
 }
 
 .homeProjects{
+	i{
+		text-align: right;
+	}
 	text-align: left;
 	width: 340px;
 	height: 580px;
@@ -202,13 +205,14 @@ i{
 }
 
 .projectsContent{
+	margin-left: 4%;
 	margin-top: 70px;
 	margin-bottom: 70px;
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
 	align-items: center;
-	justify-content: space-between;
+	// justify-content: space-between;
 	img{
 		width: 100%;
 		height:250px;
@@ -557,4 +561,25 @@ tags-input .tags .tag-item{
 
 body > ng-view > div > div > div > form > div:nth-child(1) > tags-input > div > div > input {
 	min-width: 100px;
+}
+
+.homeFilter{
+	margin-top:20px;
+	box-shadow: 0 2px 6px 0 rgba(0,0,0,0.17);
+	padding:15px;
+	border: 5px;
+	input{
+		margin-right:10px;
+				padding: 5px;
+				box-shadow: 0 2px 6px 0 rgba(0,0,0,0.17);
+				width: 120px;
+				margin-top: 0px;
+				display: inline-block;
+				border: 0;
+				border-radius:5px;
+				outline: 0;
+				&:focus {
+					box-shadow: 0 0px 2px rgba(22,22,22, 1);
+				}
+			}
 }

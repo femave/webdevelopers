@@ -15,41 +15,42 @@ angular.module('mainApp')
 
 
 	$scope.enableEditor = function(toggle) {
-		console.log(toggle)
-		if (toggle === 'title') {
-			$scope.editorEnabled = true;
-		} else if (toggle === 'shortDescription') {
-			$scope.editorEnabledSD = true;
-		} else if (toggle === 'longDescription') {
-			$scope.editorEnabledLD = true;
-		} else if (toggle == 'whyThisProject') {
-			$scope.editorEnabledWTP = true;
-		} else if (toggle == 'developerNeeded') {
-			$scope.editorEnabledDN = true;
-		} else if (toggle == 'tag') {
-			$scope.editorEnabledTag = true;
+		if($scope.options === true){
+			if (toggle === 'title') {
+				$scope.editorEnabled = true;
+			} else if (toggle === 'shortDescription') {
+				$scope.editorEnabledSD = true;
+			} else if (toggle === 'longDescription') {
+				$scope.editorEnabledLD = true;
+			} else if (toggle == 'whyThisProject') {
+				$scope.editorEnabledWTP = true;
+			} else if (toggle == 'developerNeeded') {
+				$scope.editorEnabledDN = true;
+			} else if (toggle == 'tag') {
+				$scope.editorEnabledTag = true;
+			}
 		}
 	};
 
 	$scope.disableEditor = function(toggle) {
-		if (toggle === 'title') {
-			$scope.editorEnabled = false;
-		} else if (toggle === 'shortDescription') {
-			$scope.editorEnabledSD = false;
-		} else if (toggle === 'longDescription') {
-			$scope.editorEnabledLD = false;
-		} else if (toggle == 'whyThisProject') {
-			$scope.editorEnabledWTP = false
-		} else if (toggle == 'developerNeeded') {
-			$scope.editorEnabledDN = false;
-		} else if (toggle == 'Tag') {
-			$scope.editorEnabledTag = false;
+		if($scope.options === true){
+			if (toggle === 'title') {
+				$scope.editorEnabled = false;
+			} else if (toggle === 'shortDescription') {
+				$scope.editorEnabledSD = false;
+			} else if (toggle === 'longDescription') {
+				$scope.editorEnabledLD = false;
+			} else if (toggle == 'whyThisProject') {
+				$scope.editorEnabledWTP = false
+			} else if (toggle == 'developerNeeded') {
+				$scope.editorEnabledDN = false;
+			} else if (toggle == 'Tag') {
+				$scope.editorEnabledTag = false;
+			}
 		}
 	};
 
 	$scope.save = function(toggle) {
-		console.log(toggle)
-		console.log($scope.developerNeeded)
 		if (toggle === 'developerNeeded') {
 			$scope.devNeeded.dev.push($scope.developerNeeded)
 			console.log($scope.devNeeded.dev)
@@ -60,9 +61,7 @@ angular.module('mainApp')
 	};
 
 	$scope.deleteDev = function(index) {
-		console.log(index)
 		$scope.devNeeded.dev.splice(index, 1)
-		console.log($scope.devNeeded.dev)
 	}
 
 	$scope.deleteTag = function(index) {
@@ -70,7 +69,6 @@ angular.module('mainApp')
 	}
 
 	$scope.clickMeToShowMessage = function() {
-
 		SweetAlert.swal({
 			title: 'Are you sure?',
 			text: "You won't be able to revert this!",
@@ -80,6 +78,22 @@ angular.module('mainApp')
 			cancelButtonColor: '#337ab7',
 			confirmButtonText: 'Yes, delete it!'
 		})
+	}
+
+	$scope.clickMeToShowMessageEdit = function() {
+		if($scope.options === true){
+			SweetAlert.swal({
+				title: 'Edit mode ON',
+				text: "You can edit content!",
+				type: 'info',
+			})
+		}else{
+			SweetAlert.swal({
+				title: 'Edit mode OFF',
+				text: "You can't edit content!",
+				type: 'info',
+			})
+		}
 	}
 
 	$('.myAffix').affix({

@@ -1,6 +1,6 @@
 angular.module('mainApp')
 
-.controller('miPerfilController', function ($scope) {
+.controller('miPerfilController', function ($scope, SweetAlert) {
 	$scope.username = 'Marc Vergara'
 	$scope.mail = 'marc@marc.com'
 	$scope.lenguages = {'len' : ['Java', 'Html', 'Javascript']}
@@ -8,23 +8,26 @@ angular.module('mainApp')
 	$scope.editorEnabled = false;
 
 	$scope.enableEditor = function(toggle) {
-		console.log(toggle)
-		if (toggle === 'username') {
-			$scope.editorEnabled = true;
-		} else if (toggle === 'mail') {
-			$scope.editorEnabledMail = true;
-		} else if (toggle === 'lenguages') {
-			$scope.editorEnabledLeng = true;
+		if($scope.options === true){
+			if (toggle === 'username') {
+				$scope.editorEnabled = true;
+			} else if (toggle === 'mail') {
+				$scope.editorEnabledMail = true;
+			} else if (toggle === 'lenguages') {
+				$scope.editorEnabledLeng = true;
+			}
 		}
 	};
 
 	$scope.disableEditor = function(toggle) {
-		if (toggle === 'username') {
-			$scope.editorEnabled = false;
-		} else if (toggle === 'mail') {
-			$scope.editorEnabledMail = false;
-		} else if (toggle === 'lenguages') {
-			$scope.editorEnabledLeng = false;
+		if($scope.options === true){
+			if (toggle === 'username') {
+				$scope.editorEnabled = false;
+			} else if (toggle === 'mail') {
+				$scope.editorEnabledMail = false;
+			} else if (toggle === 'lenguages') {
+				$scope.editorEnabledLeng = false;
+			}
 		}
 	};
 
@@ -40,5 +43,21 @@ angular.module('mainApp')
 
 	$scope.deleteDev = function(index) {
 		$scope.lenguages.len.splice(index, 1)
+	}
+
+	$scope.clickMeToShowMessage = function() {
+		if($scope.options === true){
+			SweetAlert.swal({
+				title: 'Edit mode ON',
+				text: "You can edit profile!",
+				type: 'info',
+			})
+		}else{
+			SweetAlert.swal({
+				title: 'Edit mode OFF',
+				text: "You can't edit profile!",
+				type: 'info',
+			})
+		}
 	}
 })

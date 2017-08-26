@@ -5,13 +5,13 @@
      <div class="col-md-6 col-md-offset-3 miProfileData">
        <img class="center-block" src="https://s-media-cache-ak0.pinimg.com/originals/cc/03/be/cc03bea7894a8c3ba9aa2688894a88a7.jpg">
        <ul>
-         <li><p ng-hide="editorEnabled">{{username}}  <i ng-click="enableEditor('username')" ng-show="options" class="fa fa-pencil"></i></p></li>
+         <li ng-click="enableEditor('username')"><p ng-hide="editorEnabled">{{username}}  <i ng-show="options" class="fa fa-pencil"></i></p></li>
          <div ng-show="editorEnabled">
             <input type="text" ng-model="username" ng-show="editorEnabled">
             <button class="btn btn-sm btn-primary" ng-click="save('username')"><i class="fa fa-thumbs-o-up"></i></button>
             <button class="btn btn-sm btn-danger" ng-click="disableEditor('username')"><i class="fa fa-thumbs-o-down"></i></button>
           </div>
-         <li><p ng-hide="editorEnabledMail">{{mail}}  <i ng-click="enableEditor('mail')" ng-show="options" class="fa fa-pencil"></i></p></li>
+         <li ng-click="enableEditor('mail')"><p ng-hide="editorEnabledMail">{{mail}}  <i ng-show="options" class="fa fa-pencil"></i></p></li>
          <div ng-show="editorEnabledMail">
             <input type="text" ng-model="mail" ng-show="editorEnabledMail">
             <button class="btn btn-sm btn-primary" ng-click="save('mail')"><i class="fa fa-thumbs-o-up"></i></button>
@@ -28,8 +28,9 @@
           </div>
          </ul>
        </ul>
-       <button class="btn btn-warning" ng-click="options = !options">Edit</button>
+       <button class="btn btn-warning" ng-click="clickMeToShowMessage(options = !options)">Edit</button>
        <button class="btn btn-primary" ng-click="enableEditor('lenguages')" ng-show="options">Add lenguage</button>
+       <button class="btn btn-primary" ng-click="" ng-show="options">Change password</button>
      </div>
    </div>
  </div>

@@ -8,139 +8,28 @@
 	</div>
 </div>
 
+<div class="container">
+	<div class="row">
+		<div class="col-md-3 col-md-offset-8">
+			<div class="homeFilter">
+				<p>Filter by:</p>
+				<label for="">Lenguage</label>
+				<input ng-model="lenguage.tag" type="text" placeholder="Javascript">	
+			</div>
+		</div>
+	</div>
+</div>
 
 <ul class="projectsContent">
-	<li class="homeProjects">
+	<li class="homeProjects" ng-repeat="cont in contentBox | filter: lenguage">
 		<div>
-			<a href="#!/project-page"><img src="https://ksr-ugc.imgix.net/assets/017/613/234/902b1945bca81c8ce5b28a70a04b78b4_original.png?crop=faces&w=560&h=315&fit=crop&v=1500750535&auto=format&q=92&s=03cd36ad3063a3907ce330abda9f5801" alt=""></a>
+			<a href="#!/project-page"><img src="{{cont.img}}" ng-mouseenter="optionsImg=true" ng-mouseleave="optionsImg=false" alt=""></a>
 			<div>
 				<div class="homeTag">
-					<button class="btn btn-warning btn-sm"><small>Javascript</small></button>
-					<button class="btn btn-warning btn-sm"><small>Html</small></button>
-					<button class="btn btn-warning btn-sm"><small>Css</small></button>
+					<button class="btn btn-warning btn-sm" ng-repeat="tag in cont.tag"><small>{{tag}}</small></button>
 				</div>
-				<h4>Title project</h4>
-				<p class="textContent">0123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789</p>
-				<div>
-					<div>
-						<img src="https://www.corazonblanco.com/media/galeria/44/9/3/0/9/n_real_madrid_los_aficionados-2199039.jpg"><p>de: <small>Cythia Demuizon</small></p>
-					</div>
-					<a href="#!/project-page"><button class="btn btn-primary">Read more</button></a>
-				</div>
-			</div>
-		</div>
-	</li>
-	<li class="homeProjects">
-		<div>
-			<a href="#!/project-page"><img src="https://ksr-ugc.imgix.net/assets/017/613/234/902b1945bca81c8ce5b28a70a04b78b4_original.png?crop=faces&w=560&h=315&fit=crop&v=1500750535&auto=format&q=92&s=03cd36ad3063a3907ce330abda9f5801" alt=""></a>
-			<div>
-				<div class="homeTag">
-					<button class="btn btn-warning btn-sm"><small>Javascript</small></button>
-					<button class="btn btn-warning btn-sm"><small>Html</small></button>
-					<button class="btn btn-warning btn-sm"><small>Css</small></button>
-				</div>
-				<h4>Title project</h4>
-				<p class="textContent">0123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789</p>
-				<div>
-					<div>
-						<img src="https://www.corazonblanco.com/media/galeria/44/9/3/0/9/n_real_madrid_los_aficionados-2199039.jpg"><p>de: <small>Cythia Demuizon</small></p>
-					</div>
-					<a href="#!/project-page"><button class="btn btn-primary">Read more</button></a>
-				</div>
-			</div>
-		</div>
-	</li>
-	<li class="homeProjects">
-		<div>
-			<a href="#!/project-page"><img src="https://ksr-ugc.imgix.net/assets/017/613/234/902b1945bca81c8ce5b28a70a04b78b4_original.png?crop=faces&w=560&h=315&fit=crop&v=1500750535&auto=format&q=92&s=03cd36ad3063a3907ce330abda9f5801" alt=""></a>
-			<div>
-				<div class="homeTag">
-					<button class="btn btn-warning btn-sm"><small>Javascript</small></button>
-					<button class="btn btn-warning btn-sm"><small>Html</small></button>
-					<button class="btn btn-warning btn-sm"><small>Css</small></button>
-				</div>
-				<h4>Title project</h4>
-				<p class="textContent">0123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789</p>
-				<div>
-					<div>
-						<img src="https://www.corazonblanco.com/media/galeria/44/9/3/0/9/n_real_madrid_los_aficionados-2199039.jpg"><p>de: <small>Cythia Demuizon</small></p>
-					</div>
-					<a href="#!/project-page"><button class="btn btn-primary">Read more</button></a>
-				</div>
-			</div>
-		</div>
-	</li>
-	<li class="homeProjects">
-		<div>
-			<a href="#!/project-page"><img src="https://ksr-ugc.imgix.net/assets/017/613/234/902b1945bca81c8ce5b28a70a04b78b4_original.png?crop=faces&w=560&h=315&fit=crop&v=1500750535&auto=format&q=92&s=03cd36ad3063a3907ce330abda9f5801" alt=""></a>
-			<div>
-				<div class="homeTag">
-					<button class="btn btn-warning btn-sm"><small>Javascript</small></button>
-					<button class="btn btn-warning btn-sm"><small>Html</small></button>
-					<button class="btn btn-warning btn-sm"><small>Css</small></button>
-				</div>
-				<h4>Title project</h4>
-				<p class="textContent">0123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789</p>
-				<div>
-					<div>
-						<img src="https://www.corazonblanco.com/media/galeria/44/9/3/0/9/n_real_madrid_los_aficionados-2199039.jpg"><p>de: <small>Cythia Demuizon</small></p>
-					</div>
-					<a href="#!/project-page"><button class="btn btn-primary">Read more</button></a>
-				</div>
-			</div>
-		</div>
-	</li>
-	<li class="homeProjects">
-		<div>
-			<a href="#!/project-page"><img src="https://ksr-ugc.imgix.net/assets/017/613/234/902b1945bca81c8ce5b28a70a04b78b4_original.png?crop=faces&w=560&h=315&fit=crop&v=1500750535&auto=format&q=92&s=03cd36ad3063a3907ce330abda9f5801" alt=""></a>
-			<div>
-				<div class="homeTag">
-					<button class="btn btn-warning btn-sm"><small>Javascript</small></button>
-					<button class="btn btn-warning btn-sm"><small>Html</small></button>
-					<button class="btn btn-warning btn-sm"><small>Css</small></button>
-				</div>
-				<h4>Title project</h4>
-				<p class="textContent">0123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789</p>
-				<div>
-					<div>
-						<img src="https://www.corazonblanco.com/media/galeria/44/9/3/0/9/n_real_madrid_los_aficionados-2199039.jpg"><p>de: <small>Cythia Demuizon</small></p>
-					</div>
-					<a href="#!/project-page"><button class="btn btn-primary">Read more</button></a>
-				</div>
-			</div>
-		</div>
-	</li>
-	<li class="homeProjects">
-		<div>
-			<a href="#!/project-page"><img src="https://ksr-ugc.imgix.net/assets/017/613/234/902b1945bca81c8ce5b28a70a04b78b4_original.png?crop=faces&w=560&h=315&fit=crop&v=1500750535&auto=format&q=92&s=03cd36ad3063a3907ce330abda9f5801" alt=""></a>
-			<div>
-				<div class="homeTag">
-					<button class="btn btn-warning btn-sm"><small>Javascript</small></button>
-					<button class="btn btn-warning btn-sm"><small>Html</small></button>
-					<button class="btn btn-warning btn-sm"><small>Css</small></button>
-				</div>
-				<h4>Title project</h4>
-				<p class="textContent">0123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789</p>
-				<div>
-					<div>
-						<img src="https://www.corazonblanco.com/media/galeria/44/9/3/0/9/n_real_madrid_los_aficionados-2199039.jpg"><p>de: <small>Cythia Demuizon</small></p>
-					</div>
-					<a href="#!/project-page"><button class="btn btn-primary">Read more</button></a>
-				</div>
-			</div>
-		</div>
-	</li>
-	<li class="homeProjects">
-		<div>
-			<a href="#!/project-page"><img src="https://ksr-ugc.imgix.net/assets/017/613/234/902b1945bca81c8ce5b28a70a04b78b4_original.png?crop=faces&w=560&h=315&fit=crop&v=1500750535&auto=format&q=92&s=03cd36ad3063a3907ce330abda9f5801" alt=""></a>
-			<div>
-				<div class="homeTag">
-					<button class="btn btn-warning btn-sm"><small>Javascript</small></button>
-					<button class="btn btn-warning btn-sm"><small>Html</small></button>
-					<button class="btn btn-warning btn-sm"><small>Css</small></button>
-				</div>
-				<h4>Title project</h4>
-				<p class="textContent">0123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789 123456789</p>
+				<h4>{{cont.title}}</h4>
+				<p class="textContent">{{cont.shortDesc}}</p>
 				<div>
 					<div>
 						<img src="https://www.corazonblanco.com/media/galeria/44/9/3/0/9/n_real_madrid_los_aficionados-2199039.jpg"><p>de: <small>Cythia Demuizon</small></p>
