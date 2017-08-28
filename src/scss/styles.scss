@@ -534,13 +534,6 @@ footer {
 	display: inline-block;
 }
 
-#affix2.affix{
-	background-color: white;
-	right:240px;
-	top: 40px;
-}
-
-
 .affix {
 	right:80px;
 	top: 170px;
@@ -559,8 +552,35 @@ tags-input .tags .tag-item{
 	border: 1px solid #eea236;
 }
 
-body > ng-view > div > div > div > form > div:nth-child(1) > tags-input > div > div > input {
+tags-input > div > div > input {
 	min-width: 100px;
+}
+
+tags-input {
+	.focused {
+		box-shadow: 0 0px 2px rgba(22,22,22, 0) !important;
+	}
+	.tags{
+		border: 0;
+		box-shadow: 0 2px 6px 0 rgba(0,0,0,0);
+		input{
+			padding: 5px;
+			box-shadow: 0 2px 6px 0 rgba(0,0,0,0.17) !important;
+			width: 100%;
+			margin-top: 0px;
+			margin-bottom: 15px;
+			display: block;
+			border: 0;
+			border-radius:5px;
+			outline: 0;
+		}
+	}
+}
+
+.tagDev .tags .tag-item{
+	background: #337ab7 !important;
+	color: white;
+	border: 1px solid #2e6da4;
 }
 
 .homeFilter{
@@ -570,16 +590,16 @@ body > ng-view > div > div > div > form > div:nth-child(1) > tags-input > div > 
 	border: 5px;
 	input{
 		margin-right:10px;
-				padding: 5px;
-				box-shadow: 0 2px 6px 0 rgba(0,0,0,0.17);
-				width: 120px;
-				margin-top: 0px;
-				display: inline-block;
-				border: 0;
-				border-radius:5px;
-				outline: 0;
-				&:focus {
-					box-shadow: 0 0px 2px rgba(22,22,22, 1);
-				}
-			}
+		padding: 5px;
+		box-shadow: 0 2px 6px 0 rgba(0,0,0,0.17);
+		width: 120px;
+		margin-top: 0px;
+		display: inline-block;
+		border: 0;
+		border-radius:5px;
+		outline: 0;
+		&:focus {
+			box-shadow: 0 0px 2px rgba(22,22,22, 1);
+		}
+	}
 }

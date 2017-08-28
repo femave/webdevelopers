@@ -9,6 +9,7 @@ const URL_DB = process.env.URL_DB || 'mongodb://localhost:27017/webdevelopers'
 
 // const principalPage = require('./routes/principalPage')
 const routeProjects = require('./routes/projects/')
+const routeProjectsPage = require('./routes/projectsPage/')
 
 mongoose.Promise = Promise
 mongoose.connect(URL_DB, {useMongoClient: true})
@@ -19,6 +20,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
 app.use('/projects', routeProjects)
+app.use('/projects-page', routeProjectsPage)
 
 // module.exports = app
 

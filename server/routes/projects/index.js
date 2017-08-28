@@ -2,14 +2,9 @@ const express = require('express')
 const router = express.Router()
 
 const addProject = require('./handlers/addProject')
-// const getTasks = require('./handlers/getTasks')
-// const updateTasks = require('./handlers/updateTasks')
-// const getTasksCompleted = require('./handlers/getTasksCompleted')
-
+const getProject = require('./handlers/getProject')
 
 router.post('/', addProject)
-// router.get('/', getTasks)
-// router.put('/', updateTasks)
-// router.get('/completed', getTasksCompleted)
+router.get('/', getProject)
 
 module.exports = router

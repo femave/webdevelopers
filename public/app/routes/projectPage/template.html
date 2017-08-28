@@ -11,15 +11,15 @@
 					<h3>Landon Jaworowski</h3>
 				</div>
 				<div class="col-md-9">
-					<h3 class="hoverProjectPage" ng-click="enableEditor('title')" ng-hide="editorEnabled">{{title}} <i ng-show="options" class="fa fa-pencil"></i></h3>
+					<h3 class="hoverProjectPage" ng-click="enableEditor('title')" ng-model="title" ng-hide="editorEnabled">{{project.title}} <i ng-show="options" class="fa fa-pencil"></i></h3>
 					<div ng-show="editorEnabled">
-						<input type="text" ng-model="title" ng-show="editorEnabled">
+						<input type="text" ng-model="project.title" ng-show="editorEnabled">
 						<button class="btn btn-sm btn-primary" ng-click="save('title')"><i class="fa fa-thumbs-o-up"></i></button>
 						<button class="btn btn-sm btn-danger" ng-click="disableEditor('title')"><i class="fa fa-thumbs-o-down"></i></button>
 					</div>
-					<p class="hoverProjectPage" ng-click="enableEditor('shortDescription')" ng-hide="editorEnabledSD">{{shortDescription}} <i ng-show="options" class="fa fa-pencil"></i></p>
+					<p class="hoverProjectPage" ng-model="shortDescription" ng-click="enableEditor('shortDescription')" ng-hide="editorEnabledSD">{{project.shortDescription}} <i ng-show="options" class="fa fa-pencil"></i></p>
 					<div ng-show="editorEnabledSD">
-						<textarea class="shortDescr" type="text" ng-model="shortDescription" ng-show="editorEnabledSD"></textarea>
+						<textarea class="shortDescr" type="text" ng-model="project.shortDescription" ng-show="editorEnabledSD"></textarea>
 						<button class="btn btn-sm btn-primary" ng-click="save('shortDescription')"><i class="fa fa-thumbs-o-up"></i></button>
 						<button class="btn btn-sm btn-danger" ng-click="disableEditor('shortDescription')"><i class="fa fa-thumbs-o-down"></i></button>
 					</div>
@@ -33,25 +33,25 @@
 						<img class="img-responsive" src="http://www.skylabcoders.com/images/19767/recommended_image_size.png" alt="">
 					</div>
 					<div class="projectPageTag">
-						<button class="btn btn-warning btn-sm" ng-repeat="tag in tags.tag track by $index"><small>{{tag}}</small>  <i ng-show="options" class="fa fa-trash-o" ng-click="deleteTag($index)"></i></button>
-						<button class="btn btn-primary btn-sm" ng-click="enableEditor('tag')" ng-show="options">Add tag</button>
+						<button class="btn btn-warning btn-sm" ng-repeat="tag in project.tags track by $index"><i ng-show="options" class="fa fa-trash-o" ng-click="deleteTag($index)"></i>  <small>{{tag}}</small></button>
+						<button class="btn btn-primary btn-sm" ng-click="enableEditor('tags')" ng-show="options">Add tag</button>
 						<div ng-show="editorEnabledTag">
-						<input type="text" ng-model="Tag">
-						<button class="btn btn-sm btn-primary" ng-click="save('Tag')"><i class="fa fa-thumbs-o-up"></i></button>
-						<button class="btn btn-sm btn-danger" ng-click="disableEditor('Tag')"><i class="fa fa-thumbs-o-down"></i></button>
+							<input type="text" ng-model="tags">
+							<button class="btn btn-sm btn-primary" ng-click="save('tags')"><i class="fa fa-thumbs-o-up"></i></button>
+							<button class="btn btn-sm btn-danger" ng-click="disableEditor('tags')"><i class="fa fa-thumbs-o-down"></i></button>
+						</div>
 					</div>
-					</div>
-					<h3>Descripcion larga:</h3>
-					<p class="hoverProjectPage" ng-click="enableEditor('longDescription')" ng-hide="editorEnabledLD">{{longDescription}} <i ng-show="options" class="fa fa-pencil"></i></p>
+					<h3>Description:</h3>
+					<p class="hoverProjectPage" ng-model="longDescription" ng-click="enableEditor('longDescription')" ng-hide="editorEnabledLD">{{project.longDescription}} <i ng-show="options" class="fa fa-pencil"></i></p>
 					<div ng-show="editorEnabledLD">
-						<textarea rows="7" type="text" ng-model="longDescription" ng-show="editorEnabledLD"></textarea>
+						<textarea rows="7" type="text" ng-model="project.longDescription" ng-show="editorEnabledLD"></textarea>
 						<button class="btn btn-sm btn-primary" ng-click="save('longDescription')"><i class="fa fa-thumbs-o-up"></i></button>
 						<button class="btn btn-sm btn-danger" ng-click="disableEditor('longDescription')"><i class="fa fa-thumbs-o-down"></i></button>
 					</div>
-					<h3>Porque este proyecto:</h3>
-					<p class="hoverProjectPage" ng-click="enableEditor('whyThisProject')" ng-hide="editorEnabledWTP">{{whyThisProject}} <i ng-show="options" class="fa fa-pencil"></i></p>
+					<h3>Why this proejct:</h3>
+					<p class="hoverProjectPage" ng-model="whyThisProject" ng-click="enableEditor('whyThisProject')" ng-hide="editorEnabledWTP">{{project.whyThisProject}} <i ng-show="options" class="fa fa-pencil"></i></p>
 					<div ng-show="editorEnabledWTP">
-						<textarea rows="7" type="text" ng-model="whyThisProject" ng-show="editorEnabledWTP"></textarea>
+						<textarea rows="7" type="text" ng-model="project.whyThisProject" ng-show="editorEnabledWTP"></textarea>
 						<button class="btn btn-sm btn-primary" ng-click="save('whyThisProject')"><i class="fa fa-thumbs-o-up"></i></button>
 						<button class="btn btn-sm btn-danger" ng-click="disableEditor('whyThisProject')"><i class="fa fa-thumbs-o-down"></i></button>
 					</div>
@@ -59,14 +59,14 @@
 				</div>
 				<div class="col-md-3 col-md-offset-1 myAffix" >
 					<h3>Developers needed:</h3>
-					<div class="developersNeeded" ng-repeat="dev in devNeeded.dev track by $index">
+					<div class="developersNeeded" ng-repeat="dev in project.developers track by $index">
 						<p id="{{$index}}" class="pull-left"><i ng-show="options" class="fa fa-trash-o" ng-click="deleteDev($index)"></i>  {{dev}}</p><a><button class='pull-right btn btn-default'>Join project</button></a>
 					</div>
-					<button class="btn btn-primary" ng-click="enableEditor('developerNeeded')" ng-show="options">Add developer</button>
+					<button class="btn btn-primary" ng-click="enableEditor('developers')" ng-show="options">Add developer</button>
 					<div ng-show="editorEnabledDN">
-						<input type="text" ng-model="developerNeeded">
-						<button class="btn btn-sm btn-primary" ng-click="save('developerNeeded')"><i class="fa fa-thumbs-o-up"></i></button>
-						<button class="btn btn-sm btn-danger" ng-click="disableEditor('developerNeeded')"><i class="fa fa-thumbs-o-down"></i></button>
+						<input type="text" ng-model="developers">
+						<button class="btn btn-sm btn-primary" ng-click="save('developers')"><i class="fa fa-thumbs-o-up"></i></button>
+						<button class="btn btn-sm btn-danger" ng-click="disableEditor('developers')"><i class="fa fa-thumbs-o-down"></i></button>
 					</div>
 				</div>
 			</div>
