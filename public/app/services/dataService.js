@@ -30,8 +30,8 @@ angular.module('mainApp')
 		return $http.put(url, data)
 	}
 
-	function deleteAllProjectPage(){
-		const url = `/projects-page`
+	function deleteAllProjectPage(id){
+		const url = `/projects-page/${id}`
 		return $http.delete(url)
 	}
 

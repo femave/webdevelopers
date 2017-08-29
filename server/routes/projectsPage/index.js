@@ -9,6 +9,6 @@ const deleteAllProjectPage = require('./handlers/deleteAllProjectPage')
 router.post('/', editProjectPage)
 router.get('/:id', getProjectPage)
 router.put('/', deleteProjectPage)
-router.delete('/', deleteAllProjectPage)
+router.delete('/:id', deleteAllProjectPage)
 
 module.exports = router

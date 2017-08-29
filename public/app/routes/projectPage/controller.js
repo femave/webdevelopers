@@ -1,5 +1,5 @@
 angular.module('mainApp')
-.controller('projectPageController', function($scope, $routeParams, dataService, SweetAlert) {
+.controller('projectPageController', function($scope, $routeParams, $location, dataService, SweetAlert) {
 
   const id = $routeParams.id
 
@@ -7,9 +7,6 @@ angular.module('mainApp')
   .then(data => 
     $scope.project = data.data
     )
-  
-  $scope.options = true
-
 
   $scope.enableEditor = function(toggle) {
     if($scope.options === true){
@@ -91,6 +88,11 @@ $scope.deleteTag = function(index) {
   .then( data => console.log(data))
 }
 
+const deleteAllProjectPage = function(){
+  dataService.deleteAllProjectPage(id)
+  .then( () => $location.path('/'))
+}
+
 $scope.clickMeToShowMessage = function() {
   let self = this
   SweetAlert.swal({
@@ -105,7 +107,7 @@ $scope.clickMeToShowMessage = function() {
     closeOnCancel: false,
   }, function(isConfirm){ 
    if (isConfirm) {
-      
+      deleteAllProjectPage()
       SweetAlert.swal("Deleted!", "Your imaginary file has been deleted.", "success");
    } else {
       SweetAlert.swal("Cancelled", "Your imaginary file is safe :)", "error");
