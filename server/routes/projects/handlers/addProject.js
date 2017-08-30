@@ -1,4 +1,5 @@
 const Project = require('../../../models/project')
+const User = require('../../../models/user')
 
 function addProject (req, res) {
   const { title, tag, dev, shortDesc, longDesc, whyThisProject } = req.body
@@ -7,7 +8,14 @@ function addProject (req, res) {
   const project = new Project({ title, tags:tag, developers:dev, shortDescription:shortDesc, longDescription:longDesc, whyThisProject })
   console.log(project)
   project.save()
-    .then(() => res.redirect('/app/#!/start-project'))
+
+
+  const _id = project._id
+
+  const username = 'marc'
+  User
+  	.findOneAndUpdate({'username' : username}, {$push: {projects:{projectid: _id}}})
+  	.then(() => res.json(`/app/#!/project-page/${_id}`))
 
 }
 

@@ -10,7 +10,8 @@ angular.module('mainApp')
 		// console.log(asd, Array.isArray(asd))
 
 		dataService.projectTags(title, tag, dev, image, shortDesc, longDesc, whyThisProject)
-		.then(() => {$window.location.reload();})
+			.then((url) => $window.location.href = url.data);
+		
 	}
 
 })

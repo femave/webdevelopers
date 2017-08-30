@@ -13,30 +13,31 @@
 		<div class="col-md-3 col-md-offset-8">
 			<div class="homeFilter">
 				<p>Filter by lenguage</p>
-				<input ng-model="lenguage.tags" type="text" placeholder="Javascript">	
+				<input ng-model="lenguage" type="text" placeholder="Javascript">
+				</div>
 			</div>
 		</div>
 	</div>
-</div>
 
-<ul class="projectsContent">
-	<li class="homeProjects" ng-repeat="cont in project | filter: lenguage">
-		<div>
-			<a href="#!/project-page/{{cont._id}}"><img src="https://ksr-ugc.imgix.net/assets/017/613/234/902b1945bca81c8ce5b28a70a04b78b4_original.png?crop=faces&w=560&h=315&fit=crop&v=1500750535&auto=format&q=92&s=03cd36ad3063a3907ce330abda9f5801" ng-mouseenter="optionsImg=true" ng-mouseleave="optionsImg=false" alt="">
-			</a>
+	<ul class="projectsContent">
+		<li class="homeProjects" ng-repeat="cont in project | filter: {tags: lenguage}">
 			<div>
-				<div class="homeTag">
-					<button class="btn btn-warning btn-sm" ng-repeat="tag in cont.tags"><small>{{tag}}</small></button>
-				</div>
-				<h4>{{cont.title}}</h4>
-				<p class="textContent">{{cont.shortDescription}}</p>
+			<span class="fa fa-star-o fa-2x" ng-click="toggleFav = !toggleFav" ng-class="{'fa-star' : toggleFav, 'fa-star-o' : !toggleFav}"></span>
+				<a href="#!/project-page/{{cont._id}}"><img src="https://ksr-ugc.imgix.net/assets/017/613/234/902b1945bca81c8ce5b28a70a04b78b4_original.png?crop=faces&w=560&h=315&fit=crop&v=1500750535&auto=format&q=92&s=03cd36ad3063a3907ce330abda9f5801" ng-mouseenter="optionsImg=true" ng-mouseleave="optionsImg=false" alt="">
+				</a>
 				<div>
-					<div>
-						<img src="https://www.corazonblanco.com/media/galeria/44/9/3/0/9/n_real_madrid_los_aficionados-2199039.jpg"><p>de: <small>Cythia Demuizon</small></p>
+					<div class="homeTag">
+						<button class="btn btn-warning btn-sm" ng-repeat="tag in cont.tags" ng-click="getTagFilter(tag)"><small>{{tag}}</small></button>
 					</div>
-					<a href="#!/project-page/{{cont._id}}"><button class="btn btn-primary">Read more</button></a>
+					<h4>{{cont.title}}</h4>
+					<p class="textContent">{{cont.shortDescription}}</p>
+					<div>
+						<div>
+							<img src="https://www.corazonblanco.com/media/galeria/44/9/3/0/9/n_real_madrid_los_aficionados-2199039.jpg"><p>de: <small>Cythia Demuizon</small></p>
+						</div>
+						<a href="#!/project-page/{{cont._id}}"><button class="btn btn-primary">Read more</button></a>
+					</div>
 				</div>
 			</div>
-		</div>
-	</li>
-</ul>
+		</li>
+	</ul>

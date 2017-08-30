@@ -107,33 +107,38 @@ $scope.clickMeToShowMessage = function() {
     closeOnCancel: false,
   }, function(isConfirm){ 
    if (isConfirm) {
-      deleteAllProjectPage()
-      SweetAlert.swal("Deleted!", "Your imaginary file has been deleted.", "success");
-   } else {
-      SweetAlert.swal("Cancelled", "Your imaginary file is safe :)", "error");
-   }
+    deleteAllProjectPage()
+    SweetAlert.swal("Deleted!", "Your imaginary file has been deleted.", "success");
+  } else {
+    SweetAlert.swal("Cancelled", "Your imaginary file is safe :)", "error");
+  }
 });
 
-  }
+}
 
-  $scope.clickMeToShowMessageEdit = function() {
-    if($scope.options === true){
-      SweetAlert.swal({
-        title: 'Edit mode ON',
-        text: "You can edit content!",
-        type: 'info',
-      })
+$scope.followProject = function(){
+  dataService.addFavouritesPage(id)
+     .then( data => console.log(data))
+}
+
+$scope.clickMeToShowMessageEdit = function() {
+  if($scope.options === true){
+    SweetAlert.swal({
+      title: 'Edit mode ON',
+      text: "You can edit content!",
+      type: 'info',
+    })
+  }
+}
+
+$('.myAffix').affix({
+  offset: {
+    top: 475,
+    bottom: function () {
+      return (this.bottom = $('.footer').outerHeight(true))
     }
   }
-
-  $('.myAffix').affix({
-    offset: {
-      top: 475,
-      bottom: function () {
-        return (this.bottom = $('.footer').outerHeight(true))
-      }
-    }
-  })
+})
 
 
 

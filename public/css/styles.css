@@ -120,31 +120,40 @@ i:hover {
   list-style-type: none; }
   .homeProjects i {
     text-align: right; }
-  .homeProjects div .homeTag {
-    display: inline !important;
-    margin-top: -20px !important;
-    height: 50px !important; }
-    .homeProjects div .homeTag .btn {
-      border-radius: 0px; }
-  .homeProjects div div {
-    padding: 15px;
-    display: flex;
-    flex-direction: column;
-    height: 330px; }
-    .homeProjects div div .textContent {
-      min-height: 88px; }
-    .homeProjects div div div {
-      text-align: center; }
-      .homeProjects div div div img {
-        align-self: center;
-        height: 30px;
-        width: 30px;
-        border-radius: 50%; }
-    .homeProjects div div a {
-      text-align: center;
-      display: block; }
-      .homeProjects div div a button {
-        width: 100%; }
+  .homeProjects div {
+    position: relative; }
+    .homeProjects div span {
+      display: none;
+      position: absolute;
+      right: 15px;
+      top: 15px; }
+    .homeProjects div .homeTag {
+      display: inline !important;
+      margin-top: -20px !important;
+      height: 50px !important; }
+      .homeProjects div .homeTag .btn {
+        border-radius: 0px; }
+    .homeProjects div div {
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      height: 330px; }
+      .homeProjects div div .textContent {
+        min-height: 88px; }
+      .homeProjects div div div {
+        text-align: center; }
+        .homeProjects div div div img {
+          align-self: center;
+          height: 30px;
+          width: 30px;
+          border-radius: 50%; }
+      .homeProjects div div a {
+        text-align: center;
+        display: block; }
+        .homeProjects div div a button {
+          width: 100%; }
+  .homeProjects:hover span {
+    display: block; }
 
 .projectsContent {
   margin-left: 4%;

@@ -101,7 +101,7 @@
         <div class="modal-body">
           <div id="myTabContent" class="tab-content">
             <div class="tab-pane fade active in" id="signup">
-              <form class="form-horizontal">
+              <form class="form-horizontal" action='user/register' method="POST">
                 <fieldset>
                   <!-- Sign Up Form -->
 
@@ -109,36 +109,36 @@
                   <div class="control-group">
                   <div class="controls">
                       <label>Enter your username that will appear in your projects</label>
-                      <input id="Username" name="Username" class="form-control" type="text" placeholder="Username" class="input-large" required>
+                      <input id="username" name="username" class="form-control" type="text" placeholder="Username" class="input-large" required>
                     </div>
                   </div>
 
                   <!-- Text input-->
                   <div class="control-group">
                     <div class="controls">
-                      <input id="Email" name="Email" class="form-control" type="text" placeholder="Mail" class="input-large" required>
+                      <input id="mail" name="mail" class="form-control" type="text" placeholder="Mail" class="input-large" required>
                     </div>
                   </div>
 
                   <!-- Password input-->
                   <div class="control-group">
                     <div class="controls">
-                      <input id="password" name="password" class="form-control" type="password" placeholder="Password" class="input-large" required="">
+                      <input id="password" name="password" class="form-control" type="password" placeholder="Password" class="input-large" required>
                     </div>
                   </div>
 
                   <!-- Text input-->
-                  <div class="control-group">
+                  <!-- <div class="control-group">
                     <div class="controls">
                       <input id="reenterpassword" class="form-control" name="reenterpassword" type="password" placeholder="Comfirm password" class="input-large" required="">
                     </div>
                   </div>
-
+ -->
                   <!-- Button -->
                   <div class="control-group">
-                    <label class="control-label" for="confirmsignup"></label>
+                   <!--  <label class="control-label" for="confirmsignup"></label> -->
                     <div class="controls">
-                      <button id="confirmsignup" name="confirmsignup" class="btn btn-success">Sign Up</button>
+                      <button class="btn btn-success">Register</button>
                     </div>
                   </div>
 
@@ -158,20 +158,20 @@
         <div class="modal-body">
           <div id="myTabContent" class="tab-content">
             <div class="tab-pane fade active in" id="signinn">
-              <form class="form-horizontal">
+              <form class="form-horizontal" action="user/login" method="POST">
                 <fieldset>
 
                   <!-- Text input-->
                   <div class="control-group">
                     <div class="controls">
-                      <input type="text" class="form-control" placeholder="Username" class="input-medium">
+                      <input type="text" class="form-control" name="username" placeholder="Username" class="input-medium">
                     </div>
                   </div>
 
                   <!-- Password input-->
                   <div class="control-group">
                     <div class="controls">
-                      <input class="form-control" type="password" placeholder="Password" class="input-medium">
+                      <input class="form-control" name="password" type="password" placeholder="Password" class="input-medium">
                     </div>
                   </div>
 

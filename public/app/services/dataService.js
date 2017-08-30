@@ -7,6 +7,26 @@ angular.module('mainApp')
 		return $http.get(url)
 	}
 
+	function getUserProjects(){
+		const id = "59a6b502c4f25d13a0a64d33" //USER ID!!!!!!!!!!!!!!!
+		const url = `/projects/${id}`
+		console.log(url)
+		return $http.get(url)
+	}
+
+	function addFavouritesPage(id){
+		const data = {idUser : "59a6b502c4f25d13a0a64d33"} //USER ID!!!!!!!!!!!!!!!
+		const url = `/projects-page/${id}`
+		return $http.post(url, data)
+	}
+
+	function getUserFavouriteProjects(){
+		const id = "59a6b502c4f25d13a0a64d33" //USER ID!!!!!!!!!!!!!!!
+		const url = `/projects-page/favourites/${id}`
+		console.log(url)
+		return $http.get(url)
+	}
+
 	function projectTags(title, tag, dev, image, shortDesc, longDesc, whyThisProject){
 		let data = {title, tag, dev, image, shortDesc, longDesc, whyThisProject}
 		const url = `/projects`
@@ -43,6 +63,9 @@ angular.module('mainApp')
 		getProjectPage:getProjectPage,
 		editProjectPage:editProjectPage,
 		deleteProjectPage:deleteProjectPage,
-		deleteAllProjectPage:deleteAllProjectPage
+		deleteAllProjectPage:deleteAllProjectPage,
+		getUserProjects:getUserProjects,
+		addFavouritesPage:addFavouritesPage,
+		getUserFavouriteProjects:getUserFavouriteProjects
 	}
 })
