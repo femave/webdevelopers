@@ -15,6 +15,10 @@ router
 	.put(deleteProjectPage)
 
 router
+	.route('/favourites')
+	.post(deleteFavouritePage)
+
+router
 	.route('/:id')
 	.get(getProjectPage)
 	.delete(deleteAllProjectPage)
@@ -23,10 +27,6 @@ router
 router
 	.route('/favourites/:id')
 	.get(getFavouritesPage)
-
-router
-	.route('/favourites')
-	.post(deleteFavouritePage)
 
 
 module.exports = router
