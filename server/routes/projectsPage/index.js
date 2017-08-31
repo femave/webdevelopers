@@ -7,6 +7,7 @@ const deleteProjectPage = require('./handlers/deleteProjectPage')
 const deleteAllProjectPage = require('./handlers/deleteAllProjectPage')
 const addFavouritesPage = require('./handlers/addFavouritesPage')
 const getFavouritesPage = require('./handlers/getFavouritesPage')
+const deleteFavouritePage = require('./handlers/deleteFavouritePage')
 
 router
 	.route('/')
@@ -22,5 +23,10 @@ router
 router
 	.route('/favourites/:id')
 	.get(getFavouritesPage)
+
+router
+	.route('/favourites')
+	.post(deleteFavouritePage)
+
 
 module.exports = router

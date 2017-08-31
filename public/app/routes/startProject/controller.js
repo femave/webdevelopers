@@ -7,7 +7,6 @@ angular.module('mainApp')
 		
 		let tag = tags.map(function(tag){ return tag.text})
 		let dev = developer.map(function(dev){ return dev.text})
-		// console.log(asd, Array.isArray(asd))
 
 		dataService.projectTags(title, tag, dev, image, shortDesc, longDesc, whyThisProject)
 			.then((url) => $window.location.href = url.data);

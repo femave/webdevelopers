@@ -9,9 +9,9 @@ function deleteAllProjectPage (req, res) {
 	.update({}, {$pull: {favourites: {favouriteid: id}}}, { multi: true })
 	.then((info) => console.log('delete reference from user confirmation', info))
 
-	// Project
-	// .remove({'_id':id})
-	// .then(project => res.json(project))
+	Project
+	.remove({'_id':id})
+	.then(project => res.json(project))
 
 }
 

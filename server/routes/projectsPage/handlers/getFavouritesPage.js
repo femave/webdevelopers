@@ -8,7 +8,7 @@ function getFavouritesPage (req, res) {
   .findById(id)
   	.populate('favourites.favouriteid')
   	.then((data) =>{ 
-  		console.log(data)
+  		// console.log(data)
   	  res.json(data)
   	})
 

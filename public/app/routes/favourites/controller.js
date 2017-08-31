@@ -4,8 +4,15 @@ angular.module('mainApp')
 
 	dataService.getUserFavouriteProjects()
 	.then(data => {
-		console.log(data.data.favourites)
 		$scope.project = data.data.favourites
+		// console.log($scope.project)
 	})
+
+	$scope.noFav = function(id){
+		
+		dataService.deleteFavouritePage(id)
+		.then( console.log)
+
+	}
 	
 })
