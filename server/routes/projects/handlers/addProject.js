@@ -1,5 +1,5 @@
 const Project = require('../../../models/project')
-const User = require('../../../models/user')
+const User = require('../../../models/User')
 
 function addProject (req, res) {
   const { title, tag, dev, shortDesc, longDesc, whyThisProject } = req.body

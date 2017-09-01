@@ -8,19 +8,19 @@ angular.module('mainApp')
 	}
 
 	function getUserProjects(){
-		const id = "59a6b502c4f25d13a0a64d33" //USER ID!!!!!!!!!!!!!!!
+		const id = "59a91e5013aab91c4819970b" //USER ID!!!!!!!!!!!!!!!
 		const url = `/projects/${id}`
 		return $http.get(url)
 	}
 
 	function addFavouritesPage(id){
-		const data = {idUser : "59a6b502c4f25d13a0a64d33"} //USER ID!!!!!!!!!!!!!!!
+		const data = {idUser : "59a91e5013aab91c4819970b"} //USER ID!!!!!!!!!!!!!!!
 		const url = `/projects-page/${id}`
 		return $http.post(url, data)
 	}
 
 	function getUserFavouriteProjects(){
-		const id = "59a6b502c4f25d13a0a64d33" //USER ID!!!!!!!!!!!!!!!
+		const id = "59a91e5013aab91c4819970b" //USER ID!!!!!!!!!!!!!!!
 		const url = `/projects-page/favourites/${id}`
 		return $http.get(url)
 	}
@@ -50,9 +50,8 @@ angular.module('mainApp')
 
 	function deleteFavouritePage(id){
 		let data = {id}
-		console.log(data)
 		const url = `/projects-page/favourites`
-		return $http.post(url, data)
+		return $http.put(url, data)
 	}
 
 	function deleteAllProjectPage(id){

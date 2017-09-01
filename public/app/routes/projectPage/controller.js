@@ -117,29 +117,43 @@ $scope.clickMeToShowMessage = function() {
 }
 
 $scope.followProject = function(){
+
   dataService.addFavouritesPage(id)
-     .then( data => console.log(data))
-}
-
-$scope.clickMeToShowMessageEdit = function() {
-  if($scope.options === true){
-    SweetAlert.swal({
-      title: 'Edit mode ON',
-      text: "You can edit content!",
-      type: 'info',
+  .then( data => {
+    console.log(data.data)
+    if(data.data === 'Added to favourites'){
+      SweetAlert.swal({
+        title: 'Added to favourites',
+        type: 'info',
+      })
+    }else{
+      SweetAlert.swal({
+        title: 'Project already following',
+        type: 'info',
+        })
+      }
     })
-  }
-}
-
-$('.myAffix').affix({
-  offset: {
-    top: 475,
-    bottom: function () {
-      return (this.bottom = $('.footer').outerHeight(true))
     }
-  }
-})
+
+    $scope.clickMeToShowMessageEdit = function() {
+      if($scope.options === true){
+        SweetAlert.swal({
+          title: 'Edit mode ON',
+          text: "You can edit content!",
+          type: 'info',
+        })
+      }
+    }
+
+    $('.myAffix').affix({
+      offset: {
+        top: 475,
+        bottom: function () {
+          return (this.bottom = $('.footer').outerHeight(true))
+        }
+      }
+    })
 
 
 
-})
+  })

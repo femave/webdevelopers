@@ -1,4 +1,4 @@
-const User = require('../../../models/user')
+const User = require('../../../models/User')
 
 function getFavouritesPage (req, res) {
 
@@ -8,7 +8,7 @@ function getFavouritesPage (req, res) {
   .findById(id)
   	.populate('favourites.favouriteid')
   	.then((data) =>{ 
-  		// console.log(data)
+  		// console.log('Data from getFavouritesPage => ', data)
   	  res.json(data)
   	})
 

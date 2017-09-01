@@ -1,6 +1,6 @@
 angular.module('mainApp')
 
-.controller('favoritesController', function ($scope, dataService) {
+.controller('favoritesController', function ($scope, $rootScope, dataService, $window) {
 
 	dataService.getUserFavouriteProjects()
 	.then(data => {
@@ -8,10 +8,15 @@ angular.module('mainApp')
 		// console.log($scope.project)
 	})
 
+	dataService.getUserProjects()
+	.then(data => {
+		$rootScope.badge = data.data.projects.length
+	})
+
 	$scope.noFav = function(id){
 		
 		dataService.deleteFavouritePage(id)
-		.then( console.log)
+		.then(()=>$window.location.reload())
 
 	}
 	

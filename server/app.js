@@ -4,31 +4,40 @@ const bodyParser = require('body-parser')
 const mongoose = require('mongoose')
 const app = express()
 
-const PORT = process.env.PORT || 3000
-const URL_DB = process.env.URL_DB || 'mongodb://localhost:27017/webdevelopers'
+require('dotenv').load()
 
-// const principalPage = require('./routes/principalPage')
+const PORT = process.env.PORT
+const URL_DB = process.env.URL_DB
+
+// routes
 const routeProjects = require('./routes/projects/')
 const routeProjectsPage = require('./routes/projectsPage/')
+const auth = require('./routes/auth/')
 
-const user = require('./routes/users/')
+// config
+const passport = require('./config/passport/')
+
+// mail
+// const mail = require('./mail')
 
 mongoose.Promise = Promise
 mongoose.connect(URL_DB, {useMongoClient: true})
-
 
 app.use(express.static(path.join(process.cwd(), 'public')))
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
+// config
+app.use(passport.initialize())
+
 // routes
 app.use('/projects', routeProjects)
 app.use('/projects-page', routeProjectsPage)
+app.use('/user', auth)
 
-// config
-app.use('/user', user)
+// mail
+// app.use('/sendMail', mail)
 
-// module.exports = app
 
 app.listen(PORT)
 console.log(`Listening at port ${PORT}`)

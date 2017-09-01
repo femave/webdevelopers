@@ -123,7 +123,7 @@ i:hover {
   .homeProjects div {
     position: relative; }
     .homeProjects div span {
-      display: none;
+      cursor: pointer;
       position: absolute;
       right: 15px;
       top: 15px; }

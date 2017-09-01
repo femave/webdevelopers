@@ -21,7 +21,7 @@
         <ul class="nav navbar-nav">
           <li><a ng-href="#!/start-project">Start project</a></li>
           <li><a ng-href="#!/favourites">Favourites</a></li>
-          <li><a ng-href="#!/myProject">My projects <span class="badge">4</span></a></li>
+          <li><a ng-href="#!/myProject">My projects <span class="badge">{{badge}}</span></a></li>
         </ul>
         
         <ul class="nav navbar-nav navbar-right">
@@ -73,6 +73,7 @@
 
     <!-- services js -->
     <script src="services/dataService.js"></script>
+    <script src="services/authService.js"></script>
 
     <!-- route home -->
     <script src="routes/home/index.js"></script>

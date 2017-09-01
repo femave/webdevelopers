@@ -1,5 +1,5 @@
 const Project = require('../../../models/project')
-const User = require('../../../models/user.js')
+const User = require('../../../models/User.js')
 
 function deleteAllProjectPage (req, res) {
 
@@ -7,6 +7,10 @@ function deleteAllProjectPage (req, res) {
 
 	User
 	.update({}, {$pull: {favourites: {favouriteid: id}}}, { multi: true })
+	.then((info) => console.log('delete reference from user confirmation', info))
+
+	User
+	.update({}, {$pull: {projects: {projectid: id}}}, { multi: true })
 	.then((info) => console.log('delete reference from user confirmation', info))
 
 	Project
