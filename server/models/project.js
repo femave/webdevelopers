@@ -7,7 +7,8 @@ var ProjectSchema = new mongoose.Schema({
   developers: [ String ],
   shortDescription: { type: String, max: 120 },
   longDescription: String,
-  whyThisProject: {type:String, default: ''}
+  whyThisProject: {type:String, default: ''},
+  creator: String
 }, { collection })
 
 module.exports = mongoose.model('project', ProjectSchema);

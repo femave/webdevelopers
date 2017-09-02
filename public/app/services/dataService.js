@@ -1,6 +1,6 @@
 angular.module('mainApp')
 
-.factory('dataService', function ($http) {
+.factory('dataService', function ($http, $rootScope) {
 
 	function getProject(){
 		const url = `/projects`
@@ -8,25 +8,25 @@ angular.module('mainApp')
 	}
 
 	function getUserProjects(){
-		const id = "59a91e5013aab91c4819970b" //USER ID!!!!!!!!!!!!!!!
+		const id = $rootScope.idLoggedUser //USER ID!!!!!!!!!!!!!!!
 		const url = `/projects/${id}`
 		return $http.get(url)
 	}
 
 	function addFavouritesPage(id){
-		const data = {idUser : "59a91e5013aab91c4819970b"} //USER ID!!!!!!!!!!!!!!!
+		const data = {idUser : $rootScope.idLoggedUser} //USER ID!!!!!!!!!!!!!!!
 		const url = `/projects-page/${id}`
 		return $http.post(url, data)
 	}
 
 	function getUserFavouriteProjects(){
-		const id = "59a91e5013aab91c4819970b" //USER ID!!!!!!!!!!!!!!!
+		const id = $rootScope.idLoggedUser 
 		const url = `/projects-page/favourites/${id}`
 		return $http.get(url)
 	}
 
 	function projectTags(title, tag, dev, image, shortDesc, longDesc, whyThisProject){
-		let data = {title, tag, dev, image, shortDesc, longDesc, whyThisProject}
+		let data = {title, tag, dev, image, shortDesc, longDesc, whyThisProject, creator: $rootScope.idLoggedUser}
 		const url = `/projects`
 		return $http.post(url, data)
 	}
@@ -62,15 +62,15 @@ angular.module('mainApp')
 
 
 	return {
-		projectTags:projectTags,
-		getProject:getProject,
-		getProjectPage:getProjectPage,
-		editProjectPage:editProjectPage,
-		deleteProjectPage:deleteProjectPage,
-		deleteAllProjectPage:deleteAllProjectPage,
-		getUserProjects:getUserProjects,
-		addFavouritesPage:addFavouritesPage,
-		getUserFavouriteProjects:getUserFavouriteProjects,
-		deleteFavouritePage:deleteFavouritePage
+		projectTags,
+		getProject,
+		getProjectPage,
+		editProjectPage,
+		deleteProjectPage,
+		deleteAllProjectPage,
+		getUserProjects,
+		addFavouritesPage,
+		getUserFavouriteProjects,
+		deleteFavouritePage
 	}
 })

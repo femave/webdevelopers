@@ -3,6 +3,7 @@ angular.module('mainApp')
   $routeProvider
 	.when('/favourites', {
 	  templateUrl: 'routes/favourites/template.html',
-	  controller: 'favoritesController'
+	  controller: 'favoritesController',
+	  secure: true
 })
 })

@@ -9,7 +9,7 @@ function register(req, res) {
     if (err) {
       return res.json({ success: false, msg: 'Username already exists.' })
     }
-    res.redirect('/')
+    res.redirect('/app')
   })
 
 }

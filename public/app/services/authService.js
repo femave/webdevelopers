@@ -1,11 +1,11 @@
 (function () {
-  angular.module('MyApp')
-    .factory('AuthService', AuthService)
+  angular.module('mainApp')
+    .factory('authService', authService)
 
-  function AuthService ($rootScope, $http, StorageService, jwtHelper) {
+  function authService ($rootScope, $http, storageService, jwtHelper) {
 
     function isLoggedIn () {
-      const token = StorageService.getToken()
+      const token = storageService.getToken()
       if (!token) return false
      	return true
     }
@@ -13,25 +13,27 @@
     function setCredentials (token) {
       const tokenPayload = jwtHelper.decodeToken(token)
       $rootScope.loggedUser = tokenPayload.username
+      $rootScope.idLoggedUser = tokenPayload.id
     }
 
     function register (username, password) {
-      return $http.post('/register', {username, password})
+      return $http.post('/user/register', {username, password})
                 .then(res => res.data)
     }
 
     function login (username, password) {
-      return $http.post('/login', {username, password})
+      return $http.post('/user/login', {username, password})
                 .then(res => res.data)
                 .then(data => {
-                  StorageService.saveToken(data.token)
+                  storageService.saveToken(data.token)
                   setCredentials(data.token)
                   return data.success
                 })
     }
 
     function logout (username, password) {
-      StorageService.removeToken()
+      console.log('login out')
+      storageService.removeToken()
       delete $rootScope.loggedUser
     }
 

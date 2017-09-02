@@ -1,8 +1,8 @@
 angular.module('mainApp')
 
 .controller('homeController', function ($scope, $rootScope, dataService) {
-
-	console.log($scope)
+	$rootScope.logged = false
+	
 
 	dataService.getProject()
 	.then(data => {

@@ -3,6 +3,7 @@ angular.module('mainApp')
   $routeProvider
 	.when('/mi-perfil', {
 	  templateUrl: 'routes/miPerfil/template.html',
-	  controller: 'miPerfilController'
+	  controller: 'miPerfilController',
+	  secure: true
 })
 })

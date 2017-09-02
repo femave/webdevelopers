@@ -8,6 +8,10 @@ p {
 i:hover {
   cursor: pointer; }
 
+.panel {
+  margin-top: 80px;
+  margin-bottom: 40px; }
+
 .headerImage {
   background: url("https://images.alphacoders.com/109/109221.jpg") no-repeat center;
   min-height: 500px; }

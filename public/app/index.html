@@ -12,32 +12,9 @@
 </head>
 <body>
   <header>
-    <nav class="navbar navbar-default">
-
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <a class="navbar-brand" ng-href="#!/">
-          <img alt="WebDevelopers" src="">
-        </a>
-        <ul class="nav navbar-nav">
-          <li><a ng-href="#!/start-project">Start project</a></li>
-          <li><a ng-href="#!/favourites">Favourites</a></li>
-          <li><a ng-href="#!/myProject">My projects <span class="badge">{{badge}}</span></a></li>
-        </ul>
-        
-        <ul class="nav navbar-nav navbar-right">
-          <li class="dropdown">
-            <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><img src="https://s-media-cache-ak0.pinimg.com/originals/cc/03/be/cc03bea7894a8c3ba9aa2688894a88a7.jpg" alt=""></a>
-            <ul class="dropdown-menu">
-              <li><a href="#!/mi-perfil"><i class="fa fa-user-o"></i>   Profile</a></li>
-              <li><a href="#!/favourites"><i class="fa fa-star"></i>   Favourites</a></li>
-              <li><a href="#!/myProject"><i class="fa fa-suitcase"></i>   My projects</a></li>
-              <li role="separator" class="divider"></li>
-              <li><a href="/"><i class="fa fa-sign-out"></i>   Log out</a></li>
-            </ul>
-          </ul>
-        </div>
-      </nav>
-    </header> 
+    <div ng-include='"includes/loggedNav.html"' ng-hide="logged"></div> 
+    <div ng-include='"includes/nologgedNav.html"' ng-show="logged"></div> 
+  </header> 
     
     <ng-view autoscroll="true"></ng-view>
 
@@ -65,8 +42,11 @@
     <script src="../bower_components/ngSweetAlert/SweetAlert.min.js"></script>
     <script src="../bower_components/sweetalert/dist/sweetalert.min.js"></script>
 
-    <!-- ng-tags-input borrar proximamente -->
+    <!-- ng-tags-input-->
     <script src="../bower_components/ng-tags-input/ng-tags-input.min.js"></script>
+  
+    <!-- angular-jwt -->
+    <script src="/bower_components/angular-jwt/dist/angular-jwt.min.js"></script>
 
     <!-- app js -->
     <script src="app.js"></script>
@@ -74,6 +54,11 @@
     <!-- services js -->
     <script src="services/dataService.js"></script>
     <script src="services/authService.js"></script>
+    <script src="services/storageService.js"></script>
+    <script src="services/authInterceptor.js"></script>
+
+    <!-- controller nav -->
+    <script src="controller/navController.js"></script>
 
     <!-- route home -->
     <script src="routes/home/index.js"></script>
@@ -98,6 +83,10 @@
     <!-- route start Project -->
     <script src="routes/startProject/index.js"></script>
     <script src="routes/startProject/controller.js"></script>
+
+    <!-- route start Project -->
+    <script src="routes/principal/index.js"></script>
+    <script src="routes/principal/controller.js"></script>
 
   </body>
 

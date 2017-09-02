@@ -3,6 +3,7 @@ angular.module('mainApp')
   $routeProvider
 	.when('/project-page/:id', {
 	  templateUrl: 'routes/projectPage/template.html',
-	  controller: 'projectPageController'
+	  controller: 'projectPageController',
+	  secure: true
 })
 })

@@ -31,8 +31,8 @@ app.use(bodyParser.json())
 app.use(passport.initialize())
 
 // routes
-app.use('/projects', routeProjects)
-app.use('/projects-page', routeProjectsPage)
+app.use('/projects', passport.authenticate('jwt', { session: false }), routeProjects)
+app.use('/projects-page', passport.authenticate('jwt', { session: false }), routeProjectsPage)
 app.use('/user', auth)
 
 // mail

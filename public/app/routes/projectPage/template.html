@@ -2,7 +2,7 @@
 	<div class="container-fluid">
 		<div class="row titleContent">
 			<div class="bgBlack">
-				<div class="btnEditDelate">
+				<div ng-if="creator" class="btnEditDelate">
 					<button class="btn btn-danger" ng-click="clickMeToShowMessage()">Delete project</button>
 					<button class="btn btn-primary" ng-click="clickMeToShowMessageEdit(options = !options)">Edit project</button>
 				</div>

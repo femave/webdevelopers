@@ -1,8 +1,10 @@
 angular.module('mainApp')
+
 .config(function ($routeProvider) {
   $routeProvider
-	.when('/', {
+	.when('/home', {
 	  templateUrl: 'routes/home/template.html',
-	  controller: 'homeController'
+	  controller: 'homeController',
+	  secure: true
 })
 })

@@ -4,9 +4,11 @@ angular.module('mainApp')
   const id = $routeParams.id
 
   dataService.getProjectPage(id)
-  .then(data => 
-    $scope.project = data.data
-    )
+  .then(data => {
+      $scope.project = data.data.data
+      $scope.creator = data.data.creator
+      console.log($scope.project, '  ', $scope.creator)
+      })
 
   $scope.enableEditor = function(toggle) {
     if($scope.options === true){
@@ -90,7 +92,7 @@ $scope.deleteTag = function(index) {
 
 const deleteAllProjectPage = function(){
   dataService.deleteAllProjectPage(id)
-  .then( () => $location.path('/'))
+  .then( () => $location.path('/home'))
 }
 
 $scope.clickMeToShowMessage = function() {
