@@ -1,5 +1,5 @@
 const Project = require('../../../models/project')
-const User = require('../../../models/User.js')
+const User = require('../../../models/user.js')
 
 function deleteAllProjectPage (req, res) {
 
