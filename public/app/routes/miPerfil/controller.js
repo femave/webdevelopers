@@ -1,11 +1,17 @@
 angular.module('mainApp')
 
-.controller('miPerfilController', function ($scope, SweetAlert) {
-	$scope.username = 'Marc Vergara'
-	$scope.mail = 'marc@marc.com'
-	$scope.lenguages = {'len' : ['Java', 'Html', 'Javascript']}
+.controller('miPerfilController', function ($scope, SweetAlert, dataService, authService, $rootScope, $location, $window) {
+
+	$scope.username = $rootScope.loggedUser
+	$scope.mail = $rootScope.mailLoggedUser
 
 	$scope.editorEnabled = false;
+
+	dataService.getProfile()
+	.then(user => {
+		$scope.data = user.data.data
+		console.log(user.data.data)
+	})
 
 	$scope.enableEditor = function(toggle) {
 		if($scope.options === true){
@@ -32,17 +38,33 @@ angular.module('mainApp')
 	};
 
 	$scope.save = function(toggle) {
-		console.log(toggle)
-		console.log($scope.leng)
-		if (toggle === 'lenguages') {
-			$scope.lenguages.len.push($scope.leng)
-			console.log($scope.lenguages.len)
+		let {username, mail, leng} = $scope
+		if (toggle === 'username') {
+			dataService.editProfile(username, toggle)
+			.then(() => {
+				authService.logout()	
+				$location.path('/')			
+			})
+		} else if (toggle === 'mail') {
+			dataService.editProfile(mail, toggle)
+			.then(() => {
+				authService.logout()	
+				$location.path('/')			
+			})
+		} else {
+			dataService.editProfile(leng, toggle)
+			.then(() => {
+				$window.location.reload()		
+			})
 		}
-		$scope.disableEditor(toggle);
+
 	};
 
-	$scope.deleteDev = function(index) {
-		$scope.lenguages.len.splice(index, 1)
+	$scope.deleteDev = function(leng) {
+		dataService.deleteProfile(leng)
+		.then(() => {
+			$window.location.reload()	
+		})
 	}
 
 	$scope.clickMeToShowMessage = function() {

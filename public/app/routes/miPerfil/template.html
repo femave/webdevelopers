@@ -3,35 +3,45 @@
   <div class="container">
     <div class="row">
      <div class="col-md-6 col-md-offset-3 miProfileData">
-       <img class="center-block" src="https://s-media-cache-ak0.pinimg.com/originals/cc/03/be/cc03bea7894a8c3ba9aa2688894a88a7.jpg">
+       <img class="center-block" src="{{data.profileImg}}">
        <ul>
          <li ng-click="enableEditor('username')"><p ng-hide="editorEnabled">{{username}}  <i ng-show="options" class="fa fa-pencil"></i></p></li>
          <div ng-show="editorEnabled">
-            <input type="text" ng-model="username" ng-show="editorEnabled">
-            <button class="btn btn-sm btn-primary" ng-click="save('username')"><i class="fa fa-thumbs-o-up"></i></button>
-            <button class="btn btn-sm btn-danger" ng-click="disableEditor('username')"><i class="fa fa-thumbs-o-down"></i></button>
-          </div>
-         <li ng-click="enableEditor('mail')"><p ng-hide="editorEnabledMail">{{mail}}  <i ng-show="options" class="fa fa-pencil"></i></p></li>
-         <div ng-show="editorEnabledMail">
-            <input type="text" ng-model="mail" ng-show="editorEnabledMail">
-            <button class="btn btn-sm btn-primary" ng-click="save('mail')"><i class="fa fa-thumbs-o-up"></i></button>
-            <button class="btn btn-sm btn-danger" ng-click="disableEditor('mail')"><i class="fa fa-thumbs-o-down"></i></button>
-          </div>
-         <li><p>Lenguages you know:</p></li>
-         <ul>
-           <li ng-repeat="leng in lenguages.len track by $index"><p id="{{$index}}">{{leng}}  <i ng-show="options" class="fa fa-trash-o" ng-click="deleteDev($index)"></i></p></li>
+          <input type="text" ng-model="username" ng-show="editorEnabled">
+          <button class="btn btn-sm btn-primary" ng-click="save('username')"><i class="fa fa-thumbs-o-up"></i></button>
+          <button class="btn btn-sm btn-danger" ng-click="disableEditor('username')"><i class="fa fa-thumbs-o-down"></i></button>
+        </div>
+        <li ng-click="enableEditor('mail')"><p ng-hide="editorEnabledMail">{{mail}}  <i ng-show="options" class="fa fa-pencil"></i></p></li>
+        <div ng-show="editorEnabledMail">
+          <input type="text" ng-model="mail" ng-show="editorEnabledMail">
+          <button class="btn btn-sm btn-primary" ng-click="save('mail')"><i class="fa fa-thumbs-o-up"></i></button>
+          <button class="btn btn-sm btn-danger" ng-click="disableEditor('mail')"><i class="fa fa-thumbs-o-down"></i></button>
+        </div>
+        <li><p>Lenguages you know:</p></li>
+        <ul>
+         <li ng-repeat="leng in data.lenguages"><p>{{leng.lenguages}}  <i ng-show="options" class="fa fa-trash-o" ng-click="deleteDev(leng.lenguages)"></i></p></li>
 
-          <div ng-show="editorEnabledLeng">
-            <input type="text" ng-model="leng">
-            <button class="btn btn-sm btn-primary" ng-click="save('lenguages')"><i class="fa fa-thumbs-o-up"></i></button>
-            <button class="btn btn-sm btn-danger" ng-click="disableEditor('lenguages')"><i class="fa fa-thumbs-o-down"></i></button>
-          </div>
-         </ul>
-       </ul>
+         <div ng-show="editorEnabledLeng">
+          <input type="text" ng-model="leng">
+          <button class="btn btn-sm btn-primary" ng-click="save('lenguages')"><i class="fa fa-thumbs-o-up"></i></button>
+          <button class="btn btn-sm btn-danger" ng-click="disableEditor('lenguages')"><i class="fa fa-thumbs-o-down"></i></button>
+        </div>
+      </ul>
+    </ul>
+    <div class="row">
+      <div class="col-sm-5">
        <button class="btn btn-warning" ng-click="clickMeToShowMessage(options = !options)">Edit</button>
        <button class="btn btn-primary" ng-click="enableEditor('lenguages')" ng-show="options">Add lenguage</button>
-       <button class="btn btn-primary" ng-click="" ng-show="options">Change password</button>
      </div>
+     <div class="col-sm-6" ng-show="options">
+       <!-- <label>Inser profile image</label> -->
+       <form class="formImgProfile" ng-submit="submitImg()">
+         <input type="file" ng-model="profileImg" accept="image/*">
+         <button class="btn btn-primary">Send profile img</button>
+       </form>
+     </div>   
    </div>
  </div>
+</div>
+</div>
 </div>

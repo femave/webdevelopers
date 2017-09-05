@@ -91,7 +91,6 @@ i:hover {
     height: 50px;
     color: #4B717F; }
     .navbar-default .navbar-nav > li a:hover {
-      color: #E2F7FF;
       border-bottom: 2px solid #4B717F; }
     .navbar-default .navbar-nav > li a:link {
       color: #4B717F; }
@@ -466,3 +465,8 @@ tags-input .tags {
     outline: 0; }
     .homeFilter input:focus {
       box-shadow: 0 0px 2px #161616; }
+
+.formImgProfile {
+  padding-top: 0px !important;
+  min-height: 0px !important;
+  box-shadow: 0 0px 0px 0px transparent !important; }

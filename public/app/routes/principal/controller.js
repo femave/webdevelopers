@@ -3,7 +3,7 @@ angular.module('mainApp')
 	$rootScope.logged = true
 
 $scope.submitLogin = function (){
-	console.log($scope.username)
+	
 		authService.login($scope.username, $scope.password)
 		.then(success => {
 			if (success) {

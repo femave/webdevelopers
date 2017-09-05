@@ -137,7 +137,8 @@ $scope.followProject = function(){
     })
     }
 
-    $scope.clickMeToShowMessageEdit = function() {
+    $scope.clickMeToShowMessageEdit = function(options) {
+      $scope.options = options
       if($scope.options === true){
         SweetAlert.swal({
           title: 'Edit mode ON',

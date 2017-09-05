@@ -17,7 +17,14 @@ const UserSchema = new Schema({
   		type: ObjectId,
   		ref: 'project'
   	}
-  }]
+  }],
+  lenguages:[{
+    lenguages: String
+  }],
+  profileImg:{
+    type: String,
+    default: 'http://sommelierzy.pl/sites/default/files/avatar.png'
+  }
 
 }, {collection})
 

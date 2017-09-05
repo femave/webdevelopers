@@ -2,11 +2,9 @@ const Project = require('../../../models/project')
 const User = require('../../../models/user')
 
 function addProject (req, res) {
-  const { title, tag, dev, shortDesc, longDesc, whyThisProject, creator } = req.body
-  console.log(req.body)
+  const { title, tag, dev, shortDesc, longDesc, whyThisProject, creator, creatorName, creatorImg } = req.body
 
-  const project = new Project({ title, tags:tag, developers:dev, shortDescription:shortDesc, longDescription:longDesc, whyThisProject, creator })
-  console.log(project)
+  const project = new Project({ title, tags:tag, developers:dev, shortDescription:shortDesc, longDescription:longDesc, whyThisProject, creator, creatorName, creatorImg })
   project.save()
 
 

@@ -13,12 +13,14 @@ const URL_DB = process.env.URL_DB
 const routeProjects = require('./routes/projects/')
 const routeProjectsPage = require('./routes/projectsPage/')
 const auth = require('./routes/auth/')
+const user = require('./routes/user/')
 
 // config
 const passport = require('./config/passport/')
 
 // mail
 // const mail = require('./mail')
+
 
 mongoose.Promise = Promise
 mongoose.connect(URL_DB, {useMongoClient: true})
@@ -29,6 +31,9 @@ app.use(bodyParser.json())
 
 // config
 app.use(passport.initialize())
+
+// user config
+app.use('/users', passport.authenticate('jwt', { session: false }), user)
 
 // routes
 app.use('/projects', passport.authenticate('jwt', { session: false }), routeProjects)

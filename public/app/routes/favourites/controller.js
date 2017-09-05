@@ -5,7 +5,7 @@ angular.module('mainApp')
 	dataService.getUserFavouriteProjects()
 	.then(data => {
 		$scope.project = data.data.favourites
-		// console.log($scope.project)
+		console.log(data.data)
 	})
 
 	dataService.getUserProjects()

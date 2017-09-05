@@ -26,7 +26,7 @@ angular.module('mainApp')
 	}
 
 	function projectTags(title, tag, dev, image, shortDesc, longDesc, whyThisProject){
-		let data = {title, tag, dev, image, shortDesc, longDesc, whyThisProject, creator: $rootScope.idLoggedUser}
+		let data = {title, tag, dev, image, shortDesc, longDesc, whyThisProject, creator: $rootScope.idLoggedUser, creatorName: $rootScope.loggedUser, creatorImg: $rootScope.profileImgLoggedUser}
 		const url = `/projects`
 		return $http.post(url, data)
 	}
@@ -59,6 +59,25 @@ angular.module('mainApp')
 		return $http.delete(url)
 	}
 
+	function editProfile(edit, toggle){
+		let data = {edit, toggle}
+		console.log(data)
+		const url = `/users/edit-profile`
+		return $http.post(url, data)
+	}
+
+	function getProfile(){
+		const url = `/users/get-profile`
+		return $http.get(url)
+	}
+
+	function deleteProfile(edit){
+		let data = {edit}
+		console.log(data)
+		const url = `/users/edit-profile`
+		return $http.put(url, data)
+	}
+
 
 
 	return {
@@ -71,6 +90,9 @@ angular.module('mainApp')
 		getUserProjects,
 		addFavouritesPage,
 		getUserFavouriteProjects,
-		deleteFavouritePage
+		deleteFavouritePage,
+		editProfile,
+		getProfile,
+		deleteProfile
 	}
 })

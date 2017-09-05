@@ -14,6 +14,8 @@
       const tokenPayload = jwtHelper.decodeToken(token)
       $rootScope.loggedUser = tokenPayload.username
       $rootScope.idLoggedUser = tokenPayload.id
+      $rootScope.mailLoggedUser = tokenPayload.mail
+      $rootScope.profileImgLoggedUser = tokenPayload.profileImg
     }
 
     function register (username, password) {

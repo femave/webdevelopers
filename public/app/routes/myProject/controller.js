@@ -6,6 +6,8 @@ angular.module('mainApp')
 	.then(data => {
 		$rootScope.badge = data.data.projects === undefined ? 0 : data.data.projects.length
 		$scope.project = data.data.projects
+		$scope.user = data.data
+		console.log(data.data)
 	})
 	
 
