@@ -9,10 +9,12 @@ cloudinary.config({
 })
 
 function uploadCloudinary (req, res, next) {
+  console.log(req.file)
   if (req.file) {
     cloudinary.uploader.upload(req.file.path, ({ url }) => {
+      console.log(url)
       if (url) {
-        req.body.profileImg = url
+        req.body.file = url
         del.sync([`${uploadFolderPath}/**`, `!${uploadFolderPath}`])
         next()
       } else {

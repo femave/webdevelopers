@@ -8,7 +8,6 @@ function getMyProjectProject (req, res) {
 	.findById(id)
 	.populate('projects.projectid')
 	.then((data) =>{ 
-		console.log(data)
 		res.json(data)
 	})
 

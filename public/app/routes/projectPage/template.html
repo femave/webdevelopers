@@ -7,8 +7,8 @@
 					<button class="btn btn-primary" ng-click="clickMeToShowMessageEdit(options = !options)">Edit project</button>
 				</div>
 				<div class="col-md-3">
-					<img src="https://s-media-cache-ak0.pinimg.com/originals/cc/03/be/cc03bea7894a8c3ba9aa2688894a88a7.jpg" alt="">
-					<h3>Landon Jaworowski</h3>
+					<img src="{{project.creatorImg}}" alt="">
+					<h3>{{project.creatorName}}</h3>
 				</div>
 				<div class="col-md-9">
 					<h3 class="hoverProjectPage" ng-click="enableEditor('title')" ng-model="title" ng-hide="editorEnabled">{{project.title}} <i ng-show="options" class="fa fa-pencil"></i></h3>
@@ -30,7 +30,7 @@
 			<div class="row developersContent">
 				<div class="col-md-6 col-md-offset-1">
 					<div class="thumbnail">
-						<img class="img-responsive" src="http://www.skylabcoders.com/images/19767/recommended_image_size.png" alt="">
+						<img class="img-responsive" src="{{project.projectImage}}" alt="">
 					</div>
 					<div class="projectPageTag">
 						<button class="btn btn-warning btn-sm" ng-repeat="tag in project.tags track by $index"><i ng-show="options" class="fa fa-trash-o" ng-click="deleteTag($index)"></i>  <small>{{tag}}</small></button>

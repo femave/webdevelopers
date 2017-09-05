@@ -8,6 +8,7 @@ var ProjectSchema = new mongoose.Schema({
   shortDescription: { type: String, max: 120 },
   longDescription: String,
   whyThisProject: {type:String, default: ''},
+  projectImage: String,
   creator: String,
   creatorName: String,
   creatorImg: String

@@ -1,6 +1,6 @@
 angular.module('mainApp')
 
-.controller('startProjectController', function ($scope, $rootScope, $window, dataService) {
+.controller('startProjectController', function ($scope, $rootScope, $window, dataService, Upload) {
 
 	$scope.submit = function(){
 		let {title, tags, developer, image, shortDesc, longDesc, whyThisProject} = $scope
@@ -9,7 +9,16 @@ angular.module('mainApp')
 		let dev = developer.map(function(dev){ return dev.text})
 
 		dataService.projectTags(title, tag, dev, image, shortDesc, longDesc, whyThisProject)
-		.then((url) => $window.location.href = url.data);
+		.then((urlLink) =>{
+			const idProject = urlLink.data.split('/')[4]
+			const url = `/projects/${idProject}`
+			const file = $scope.file
+			Upload.upload({ url, file })
+			.success( (imageLink) => {
+				console.log(imageLink)
+				$window.location.href = urlLink.data
+			})			
+		});
 
 		dataService.getUserProjects()
 		.then(data => {
@@ -17,5 +26,13 @@ angular.module('mainApp')
 		})
 		
 	}
+
+	$scope.fileSelected = (files) => {
+		if (files && files.length) {
+			$scope.file = files[0];
+		}
+	}
+
+	
 
 })

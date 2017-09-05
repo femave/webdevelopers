@@ -1,6 +1,6 @@
 angular.module('mainApp')
 
-.controller('miPerfilController', function ($scope, SweetAlert, dataService, authService, $rootScope, $location, $window) {
+.controller('miPerfilController', function ($scope, SweetAlert, dataService, authService, $rootScope, $location, $window, Upload) {
 
 	$scope.username = $rootScope.loggedUser
 	$scope.mail = $rootScope.mailLoggedUser
@@ -38,7 +38,7 @@ angular.module('mainApp')
 	};
 
 	$scope.save = function(toggle) {
-		let {username, mail, leng} = $scope
+		let {username, mail, leng, profileImg} = $scope
 		if (toggle === 'username') {
 			dataService.editProfile(username, toggle)
 			.then(() => {
@@ -82,4 +82,32 @@ angular.module('mainApp')
 			})
 		}
 	}
+
+	$scope.fileSelected = (files) => {
+		if (files && files.length) {
+			$scope.file = files[0];
+		}
+	}
+
+	$scope.uploadFile = function() {
+		const url = '/users/edit-profile'
+		const file = $scope.file
+
+      // show spinning when uploading
+      // $scope.uploading = true;
+      // document.querySelector('.preview').onload = () => {
+      //   $scope.$apply( () => $scope.uploading = false )
+      // }
+
+      Upload.upload({ url, file })
+      .success( ({imageLink}) => {
+      	authService.logout()	
+      	$location.path('/')	
+      } )
+        //.progress( console.log )
+    }
+
+
+
+
 })

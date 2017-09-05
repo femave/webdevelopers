@@ -4,7 +4,7 @@
   "description": "Web about projects collabortive",
   "main": "index.js",
   "scripts": {
-    "prestart": "bower install npm install",
+    "prestart": "npm install && bower install",
     "start": "node server/app.js",
     "dev": "nodemon server/app.js",
     "build:scss": "node-sass src/scss/styles.scss public/css/styles.css",
@@ -17,13 +17,13 @@
   "dependencies": {
     "body-parser": "^1.17.2",
     "bower": "^1.8.0",
+    "cloudinary": "^1.9.0",
     "del": "^3.0.0",
     "dotenv": "^4.0.0",
     "express": "^4.15.4",
     "jsonwebtoken": "^7.4.3",
     "mongoose": "^4.11.9",
     "multer": "^1.3.0",
-    "node": "^8.3.0",
     "node-sass": "^4.5.3",
     "nodemailer": "^4.1.0",
     "passport": "^0.4.0",

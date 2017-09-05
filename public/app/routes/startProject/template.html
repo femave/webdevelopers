@@ -3,49 +3,74 @@
   <div class="container">
     <div class="row">
       <form ng-submit="submit()">
-      <div class="col-md-6">
-        <label>Title</label>
-        <input type="text" name="title" ng-model="title" placeholder="Your title" required>
-        <label>Insert programming lenguages</label>      
-        <tags-input name="tag" ng-model="tags" min-length="1" add-on-enter="true" add-on-space="true" add-on-comma="true" add-on-blur="true" add-on-paste="true"></tags-input>
-        <label>Developers you need</label>
-        <tags-input name="developer" ng-model="developer" placeholder="designer" class="tagDev" add-on-enter="true" add-on-space="true" add-on-comma="true" add-on-blur="true" add-on-paste="true"></tags-input>
+        <div class="col-md-6">
+          <label>Title</label>
+          <input type="text" name="title" ng-model="title" placeholder="Your title" required>
+          <label>Insert programming lenguages</label>      
+          <tags-input name="tag" ng-model="tags" min-length="1" add-on-enter="true" add-on-space="true" add-on-comma="true" add-on-blur="true" add-on-paste="true"></tags-input>
+          <label>Developers you need</label>
+          <tags-input name="developer" ng-model="developer" placeholder="designer" class="tagDev" add-on-enter="true" add-on-space="true" add-on-comma="true" add-on-blur="true" add-on-paste="true"></tags-input>
         <label>Upload image</label>
-        <input type="file" ng-model="image" accept="image/*">
-        <label>Short description</label>
-        <textarea rows="4" name="shortDescription" ng-model="shortDesc" type="text" maxlength='120' placeholder="Insert short description (120 characters)" required=""></textarea>
-        <label>Long description</label>
-        <textarea rows="5" name="longDescription" ng-model="longDesc" type="text" placeholder="Insert long description" required></textarea>
-        <label>Why this project?</label>
-        <textarea rows="4" name="whyThisProject" ng-model="whyThisProject" type="text" placeholder="Why this project (optional)"></textarea>
-        <input class="btn btn-primary" type="submit" value="Start new project">
-      </div>
 
-      <div class="col-md-6">
-        <ul class="projectsContent">
-          <li class="homeProjects">
-            <div>
-              <a><img src="https://roc21cdn-roc21.netdna-ssl.com/blog/wp-content/uploads/2014/08/baraja-para-programadores-tres.jpg" alt=""></a>
+
+        <!-- <input type="file" ng-model="image" accept="image/*"> -->
+        <div class="input-group image-preview">
+          <input ng-model="file.name" placeholder="" type="text" class="form-control image-preview-filename" ng-disabled="true">
+          <!-- don't give a name === doesn't send on POST/GET -->
+          <span class="input-group-btn">
+            <!-- image-preview-clear button -->
+            <button type="button" class="btn btn-default image-preview-clear" style="display:none;">
+              <span class="glyphicon glyphicon-remove"></span> Clear </button>
+              <!-- image-preview-input -->
+              <div class="btn btn-default image-preview-input">
+                <span class="glyphicon glyphicon-folder-open"></span>
+                <span class="image-preview-input-title">Browse</span>
+                <input ngf-select="fileSelected($files)" type="file" accept="'image/*'" name="file" />
+                <!-- rename it -->
+              </div>
+              <!-- <button ng-click="uploadFile()" type="button" class="btn btn-labeled btn-primary">
+                <i ng-hide="uploading" class="glyphicon glyphicon-upload"></i>
+                <i ng-show="uploading" class="glyphicon glyphicon-refresh"></i>
+                <span>Upload</span>
+              </button> -->
+            </span>
+          </div>
+
+          
+          <label>Short description</label>
+          <textarea rows="4" name="shortDescription" ng-model="shortDesc" type="text" maxlength='120' placeholder="Insert short description (120 characters)" required=""></textarea>
+          <label>Long description</label>
+          <textarea rows="5" name="longDescription" ng-model="longDesc" type="text" placeholder="Insert long description" required></textarea>
+          <label>Why this project?</label>
+          <textarea rows="4" name="whyThisProject" ng-model="whyThisProject" type="text" placeholder="Why this project (optional)"></textarea>
+          <input class="btn btn-primary" type="submit" value="Start new project">
+        </div>
+
+        <div class="col-md-6">
+          <ul class="projectsContent">
+            <li class="homeProjects">
               <div>
-                <div class="homeTag">
-                  <button class="btn btn-warning btn-sm" ng-repeat="tag in tags | limitTo: 5"><small>{{tag.text}}</small></button>
-                  <!-- <p ng-repeat="tag in tags"><small>{{tag.text}}</small></p> -->
-                </div>
-                <h4>{{title}}</h4>
-                <p class="textContent">{{shortDesc}}</p>
+                <a><img src="https://roc21cdn-roc21.netdna-ssl.com/blog/wp-content/uploads/2014/08/baraja-para-programadores-tres.jpg" alt=""></a>
                 <div>
-                  <div>
-                    <img src="{{profileImgLoggedUser}}"><p>de: <small>{{loggedUser}}</small></p>
+                  <div class="homeTag">
+                    <button class="btn btn-warning btn-sm" ng-repeat="tag in tags | limitTo: 5"><small>{{tag.text}}</small></button>
+                    <!-- <p ng-repeat="tag in tags"><small>{{tag.text}}</small></p> -->
                   </div>
-                  <a><button class="btn btn-primary">Read more</button></a>
+                  <h4>{{title}}</h4>
+                  <p class="textContent">{{shortDesc}}</p>
+                  <div>
+                    <div>
+                      <img src="{{profileImgLoggedUser}}"><p>de: <small>{{loggedUser}}</small></p>
+                    </div>
+                    <a><button class="btn btn-primary">Read more</button></a>
+                  </div>
                 </div>
               </div>
-            </div>
-          </li>
-        </ul>
-      </div>
+            </li>
+          </ul>
+        </div>
 
-    </form>
+      </form>
+    </div>
   </div>
-</div>
 </div>

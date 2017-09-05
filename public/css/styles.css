@@ -190,6 +190,7 @@ footer {
   .startProject .projectsContent {
     margin-top: 0px; }
   .startProject label {
+    margin-top: 15px;
     text-align: left;
     width: 100%; }
   .startProject h1 {
@@ -205,7 +206,7 @@ footer {
       box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.17);
       width: 100%;
       margin-top: 0px;
-      margin-bottom: 15px;
+      margin-bottom: 0px;
       display: block;
       border: 0;
       border-radius: 5px;
@@ -466,7 +467,58 @@ tags-input .tags {
     .homeFilter input:focus {
       box-shadow: 0 0px 2px #161616; }
 
-.formImgProfile {
-  padding-top: 0px !important;
-  min-height: 0px !important;
-  box-shadow: 0 0px 0px 0px transparent !important; }
+.upload-drop-zone {
+  height: 200px;
+  border-width: 2px;
+  margin-bottom: 20px; }
+
+/* skin.css Style*/
+.upload-drop-zone {
+  color: #ccc;
+  border-style: dashed;
+  border-color: #ccc;
+  line-height: 200px;
+  text-align: center; }
+
+.upload-drop-zone.drop {
+  color: #222;
+  border-color: #222; }
+
+.image-preview-input {
+  position: relative;
+  overflow: hidden;
+  margin: 0px;
+  color: #333;
+  background-color: #fff;
+  border-color: #ccc; }
+
+.image-preview-input input[type=file] {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+  cursor: pointer;
+  opacity: 0;
+  filter: alpha(opacity=0); }
+
+.image-preview-input-title {
+  margin-left: 2px; }
+
+/*------------------------------------------ */
+.glyphicon-refresh {
+  animation: spin 1s infinite linear;
+  -webkit-animation: spin2 1s infinite linear; }
+
+@keyframes spin {
+  from {
+    transform: scale(1) rotate(0deg); }
+  to {
+    transform: scale(1) rotate(360deg); } }
+
+@-webkit-keyframes spin2 {
+  from {
+    -webkit-transform: rotate(0deg); }
+  to {
+    -webkit-transform: rotate(360deg); } }
