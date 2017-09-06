@@ -19,7 +19,7 @@ const user = require('./routes/user/')
 const passport = require('./config/passport/')
 
 // mail
-// const mail = require('./mail')
+const mail = require('./routes/mail')
 
 
 mongoose.Promise = Promise
@@ -41,7 +41,7 @@ app.use('/projects-page', passport.authenticate('jwt', { session: false }), rout
 app.use('/user', auth)
 
 // mail
-// app.use('/sendMail', mail)
+app.use('/sendMail', mail)
 
 
 app.listen(PORT)

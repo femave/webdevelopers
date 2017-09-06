@@ -1,5 +1,5 @@
 angular.module('mainApp')
-.controller('projectPageController', function($scope, $routeParams, $location, dataService, SweetAlert) {
+.controller('projectPageController', function($scope, $routeParams, $location, dataService, $rootScope, SweetAlert) {
 
   const id = $routeParams.id
 
@@ -146,6 +146,14 @@ $scope.followProject = function(){
           type: 'info',
         })
       }
+    }
+
+    $scope.joinProject = function (){
+      const user = $rootScope.loggedUser
+
+      dataService.joinProject(user)
+      .then(mail => console.log(mail)) //TOASTER GOING HERE!!
+
     }
 
     $('.myAffix').affix({

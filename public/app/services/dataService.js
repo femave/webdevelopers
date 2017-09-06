@@ -78,6 +78,12 @@ angular.module('mainApp')
 		return $http.put(url, data)
 	}
 
+	function joinProject(user){
+		const data = {user}
+		const url = `/sendMail`
+		return $http.post(url, data)
+	}
+
 
 
 	return {
@@ -93,6 +99,8 @@ angular.module('mainApp')
 		deleteFavouritePage,
 		editProfile,
 		getProfile,
-		deleteProfile
+		deleteProfile,
+		joinProject
+
 	}
 })

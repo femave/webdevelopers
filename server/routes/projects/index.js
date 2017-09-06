@@ -14,7 +14,6 @@ const pathUploads = path.join(__dirname, 'upload' )
 const upload = multer({ dest: pathUploads })
 
 
-// router.use( passport.authenticate('jwt', { session: false }) )
 
 router
 	.route('/')

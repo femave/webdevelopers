@@ -1,9 +1,10 @@
-// const express = require('express');
-// const router = express.Router();
+const express = require('express');
+const router = express.Router();
+const sendMail = require('./handlers/sendMail')
 
-// const sendMail = ('./handlers/sendMail')
+console.log(sendMail)
+router
+	.route('/')
+	.post(sendMail)
 
-// route
-// 	.router('/', sendMail)
-
-// module.exports = router
+module.exports = router
