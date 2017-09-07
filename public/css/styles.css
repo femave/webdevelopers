@@ -150,7 +150,7 @@ i:hover {
         text-align: center; }
         .homeProjects div div div img {
           align-self: center;
-          height: 30px;
+          min-height: 30px;
           width: 30px;
           border-radius: 50%; }
       .homeProjects div div a {
