@@ -7,7 +7,6 @@ angular.module('mainApp')
 	dataService.getProject()
 	.then(data => {
 		$scope.project = data.data
-		console.log(data.data)
 	})
 
 	dataService.getUserProjects()

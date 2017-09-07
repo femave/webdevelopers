@@ -6,7 +6,6 @@ $scope.submitLogin = function (){
 	
 		authService.login($scope.username, $scope.password)
 		.then(success => {
-			console.log(success)
 			if (success) {
 				toaster.success(`You're logged in!`)
 				$location.path('/home')

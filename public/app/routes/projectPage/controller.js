@@ -7,7 +7,6 @@ angular.module('mainApp')
   .then(data => {
       $scope.project = data.data.data
       $scope.creator = data.data.creator
-      console.log($scope.project, '  ', $scope.creator)
       })
 
   $scope.enableEditor = function(toggle) {
@@ -51,25 +50,18 @@ angular.module('mainApp')
     const{tags, developers} = $scope
     if (toggle === 'title') {
      dataService.editProjectPage(id, title, toggle)
-     .then( data => console.log(data))
    }else if (toggle === 'shortDescription') {
     dataService.editProjectPage(id, shortDescription, toggle)
-    .then( data => console.log(data))
   } else if (toggle === 'longDescription') {
     dataService.editProjectPage(id, longDescription, toggle)
-    .then( data => console.log(data))
   } else if (toggle === 'whyThisProject') {
     dataService.editProjectPage(id, whyThisProject, toggle)
-    .then( data => console.log(data))
   } else if (toggle === 'tags') {
-    console.log(tags)
     $scope.project.tags.push($scope.tags)
     dataService.editProjectPage(id, tags, toggle)
-    .then( data => console.log(data))
   } else if (toggle === 'developers') {
     $scope.project.developers.push($scope.developers)
     dataService.editProjectPage(id, developers, toggle)
-    .then( data => console.log(data))
   }
 
   $scope.disableEditor(toggle);
@@ -80,14 +72,12 @@ $scope.deleteDev = function(index) {
   const developers = $scope.project.developers.splice(index, 1)
 
   dataService.deleteProjectPage(id, developers, toggle)
-  .then( data => console.log(data))
 }
 
 $scope.deleteTag = function(index) {
   const toggle = 'tags'
   const tags = $scope.project.tags.splice(index, 1)
   dataService.deleteProjectPage(id, tags, toggle)
-  .then( data => console.log(data))
 }
 
 const deleteAllProjectPage = function(){
@@ -122,7 +112,6 @@ $scope.followProject = function(){
 
   dataService.addFavouritesPage(id)
   .then( data => {
-    console.log(data.data)
     if(data.data === 'Added to favourites'){
       SweetAlert.swal({
         title: 'Added to favourites',
@@ -154,7 +143,6 @@ $scope.followProject = function(){
       toaster.info('Sending mail to project admin')
       dataService.joinProject(user, creatorMail, creatorName)
       .then(mail => {
-        console.log('working')
         toaster.success("Mail sended succes, admin project will response you as soon as posible!");
       }) 
 

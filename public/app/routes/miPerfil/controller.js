@@ -10,7 +10,6 @@ angular.module('mainApp')
 	dataService.getProfile()
 	.then(user => {
 		$scope.data = user.data.data
-		console.log(user.data.data)
 	})
 
 	$scope.enableEditor = function(toggle) {
