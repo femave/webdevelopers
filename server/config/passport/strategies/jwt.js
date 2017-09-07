@@ -16,6 +16,7 @@ const strategy = new Strategy( jwtOptions, (jwt_payload, done) => {
       else done(null, false);
     })
     .catch(err => done(err, false) )
+
 })
 
 module.exports = strategy

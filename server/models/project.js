@@ -11,7 +11,8 @@ var ProjectSchema = new mongoose.Schema({
   projectImage: String,
   creator: String,
   creatorName: String,
-  creatorImg: String
+  creatorImg: String,
+  creatorMail: String
 }, { collection })
 
 module.exports = mongoose.model('project', ProjectSchema);

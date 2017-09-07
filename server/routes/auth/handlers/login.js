@@ -6,7 +6,7 @@ function login(req, res) {
   const { _id: id, username, mail, profileImg } = req.user
 
   const token = jwt.sign( { id, username, mail, profileImg }, SECRET )
-
+  
    res.json({success: true, token: token})
 }
 

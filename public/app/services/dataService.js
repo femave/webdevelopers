@@ -26,7 +26,7 @@ angular.module('mainApp')
 	}
 
 	function projectTags(title, tag, dev, image, shortDesc, longDesc, whyThisProject){
-		let data = {title, tag, dev, image, shortDesc, longDesc, whyThisProject, creator: $rootScope.idLoggedUser, creatorName: $rootScope.loggedUser, creatorImg: $rootScope.profileImgLoggedUser}
+		let data = {title, tag, dev, image, shortDesc, longDesc, whyThisProject, creator: $rootScope.idLoggedUser, creatorName: $rootScope.loggedUser, creatorImg: $rootScope.profileImgLoggedUser, creatorMail: $rootScope.mailLoggedUser}
 		const url = `/projects`
 		return $http.post(url, data)
 	}
@@ -78,8 +78,8 @@ angular.module('mainApp')
 		return $http.put(url, data)
 	}
 
-	function joinProject(user){
-		const data = {user}
+	function joinProject(user, creatorMail, creatorName){
+		const data = {user, creatorMail, creatorName}
 		const url = `/sendMail`
 		return $http.post(url, data)
 	}

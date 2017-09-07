@@ -1,12 +1,12 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-4 col-md-offset-4">
+  <div class="col-md-4 col-md-offset-4 loginDiv">
       <div class="panel panel-default">
         <div class="panel-heading">
           <h3 class="panel-title">Login via site</h3>
         </div>
         <div class="panel-body">
-        <form ng-submit="submitLogin()">
+          <form ng-submit="submitLogin()">
             <fieldset>
               <div class="form-group">
                 <input class="form-control" placeholder="Your username" name="username" ng-model="username" type="text">
@@ -19,13 +19,69 @@
             </fieldset>
           </form>
           <hr/>
-          <center><h4>OR</h4></center>
-          <input class="btn btn-lg btn-facebook btn-block btn-primary" type="submit" value="Login via facebook">
-          <input class="btn btn-lg btn-google btn-block btn-danger" type="submit" value="Login via google">
         </div>
       </div>
     </div>
   </div>
+</div>
+
+
+
+<!-- Modal register -->
+<div class="modal fade bs-modal-sm" id="myModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div id="myTabContent" class="tab-content">
+          <div class="tab-pane fade active in" id="signup">
+            <form class="form-horizontal" action='user/register' method="POST">
+              <fieldset>
+                <!-- Sign Up Form -->
+
+                <!-- Username input-->
+                <div class="control-group">
+                  <div class="controls">
+                    <label>Enter your username that will appear in your projects</label>
+                    <input id="username" name="username" class="form-control" type="text" placeholder="Username" class="input-large" required>
+                  </div>
+                </div>
+
+                <!-- Text input-->
+                <div class="control-group">
+                  <div class="controls">
+                    <input id="mail" name="mail" class="form-control" type="text" placeholder="Mail" class="input-large" required>
+                  </div>
+                </div>
+
+                <!-- Password input-->
+                <div class="control-group">
+                  <div class="controls">
+                    <input id="password" name="password" class="form-control" type="password" placeholder="Password" class="input-large" required>
+                  </div>
+                </div>
+
+                <!-- Text input-->
+                  <!-- <div class="control-group">
+                    <div class="controls">
+                      <input id="reenterpassword" class="form-control" name="reenterpassword" type="password" placeholder="Comfirm password" class="input-large" required="">
+                    </div>
+                  </div>
+                -->
+                <!-- Button -->
+                <div class="control-group">
+                 <!--  <label class="control-label" for="confirmsignup"></label> -->
+                 <div class="controls">
+                  <button class="btn btn-success">Register</button>
+                </div>
+              </div>
+
+            </fieldset>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 </div>
 
 

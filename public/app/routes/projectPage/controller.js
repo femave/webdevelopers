@@ -1,5 +1,5 @@
 angular.module('mainApp')
-.controller('projectPageController', function($scope, $routeParams, $location, dataService, $rootScope, SweetAlert) {
+.controller('projectPageController', function($scope, $routeParams, $location, dataService, $rootScope, toaster, SweetAlert) {
 
   const id = $routeParams.id
 
@@ -150,9 +150,13 @@ $scope.followProject = function(){
 
     $scope.joinProject = function (){
       const user = $rootScope.loggedUser
-
-      dataService.joinProject(user)
-      .then(mail => console.log(mail)) //TOASTER GOING HERE!!
+      const {creatorName, creatorMail} = $scope.project
+      toaster.info('Sending mail to project admin')
+      dataService.joinProject(user, creatorMail, creatorName)
+      .then(mail => {
+        console.log('working')
+        toaster.success("Mail sended succes, admin project will response you as soon as posible!");
+      }) 
 
     }
 

@@ -1,6 +1,6 @@
 angular.module('mainApp')
 
-.controller('startProjectController', function ($scope, $rootScope, $window, dataService, Upload) {
+.controller('startProjectController', function ($scope, $rootScope, $window, dataService, Upload, toaster) {
 
 	$scope.submit = function(){
 		let {title, tags, developer, image, shortDesc, longDesc, whyThisProject} = $scope
@@ -15,7 +15,7 @@ angular.module('mainApp')
 			const file = $scope.file
 			Upload.upload({ url, file })
 			.success( (imageLink) => {
-				console.log(imageLink)
+				toaster.success('Project created!')
 				$window.location.href = urlLink.data
 			})			
 		});

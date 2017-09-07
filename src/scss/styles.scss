@@ -5,6 +5,10 @@ $hover: #95E1FF;		//Text color when background = $background
 
 @import url('https://fonts.googleapis.com/css?family=Raleway');
 
+.loginDiv{
+	min-height:560px;
+}
+
 h1, h2, h3, h4, h5, h6, p, a{
 	font-family: 'Raleway', sans-serif;
 }

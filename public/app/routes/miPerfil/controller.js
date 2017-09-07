@@ -71,13 +71,7 @@ angular.module('mainApp')
 		if($scope.options === true){
 			SweetAlert.swal({
 				title: 'Edit mode ON',
-				text: "You can edit profile!",
-				type: 'info',
-			})
-		}else{
-			SweetAlert.swal({
-				title: 'Edit mode OFF',
-				text: "You can't edit profile!",
+				text: "Care if you edit you're username, mail or profile image you will re-login",
 				type: 'info',
 			})
 		}

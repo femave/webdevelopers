@@ -1,4 +1,4 @@
-angular.module('mainApp', ['ngRoute', 'oitozero.ngSweetAlert', 'ngTagsInput', 'angular-jwt', 'ngFileUpload'])
+angular.module('mainApp', ['ngRoute', 'oitozero.ngSweetAlert', 'ngTagsInput', 'angular-jwt', 'ngFileUpload', 'toaster', 'ngAnimate'])
 
 .config(function ($httpProvider) {
 	$httpProvider.interceptors.push('authInterceptor')

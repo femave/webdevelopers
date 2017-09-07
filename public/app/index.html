@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="../bower_components/font-awesome/css/font-awesome.min.css">
   <link rel="stylesheet" href="../bower_components/sweetalert/dist/sweetalert.css">
   <link rel="stylesheet" href="../bower_components/ng-tags-input/ng-tags-input.min.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/angularjs-toaster/1.1.0/toaster.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
@@ -15,86 +16,91 @@
     <div ng-include='"includes/loggedNav.html"' ng-hide="logged"></div> 
     <div ng-include='"includes/nologgedNav.html"' ng-show="logged"></div> 
   </header> 
-    
-    <ng-view autoscroll="true"></ng-view>
 
-    <footer>
-      <div class="container">
-        <p class="text-center"> Copyright © 2017, Marc Vergara. All rights reserved.</p>
-      </div>
-    </footer>
-
-
-
-
-    <!-- Start Scripts -->
-
-    <!-- Main js -->
-    <!-- <script src="js/main.js"></script> -->
-
-    <!-- jquery, angular, bootstrap -->
-    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
-    <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="../bower_components/angular/angular.min.js"></script>
-    <script src="../bower_components/angular-route/angular-route.min.js"></script>
-    
-    <!-- sweetalert2 -->
-    <script src="../bower_components/ngSweetAlert/SweetAlert.min.js"></script>
-    <script src="../bower_components/sweetalert/dist/sweetalert.min.js"></script>
-
-    <!-- ng-tags-input-->
-    <script src="../bower_components/ng-tags-input/ng-tags-input.min.js"></script>
+  <ng-view autoscroll="true"></ng-view>
+  <toaster-container toaster-options="{'time-out': 4000, 'close-button': true}"></toaster-container>
   
-    <!-- angular-jwt -->
-    <script src="../bower_components/angular-jwt/dist/angular-jwt.min.js"></script>
+  <footer>
+    <div class="container">
+      <p class="text-center"> Copyright © 2017, Marc Vergara. All rights reserved.</p>
+    </div>
+  </footer>
+
+
+
+
+  <!-- Start Scripts -->
+
+  <!-- Main js -->
+  <!-- <script src="js/main.js"></script> -->
+
+  <!-- jquery, angular, bootstrap -->
+  <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+  <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="../bower_components/angular/angular.min.js"></script>
+  <script src="../bower_components/angular-route/angular-route.min.js"></script>
+
+  <!-- sweetalert2 -->
+  <script src="../bower_components/ngSweetAlert/SweetAlert.min.js"></script>
+  <script src="../bower_components/sweetalert/dist/sweetalert.min.js"></script>
+
+  <!-- ng-tags-input-->
+  <script src="../bower_components/ng-tags-input/ng-tags-input.min.js"></script>
   
-    <!-- ng-file-upload -->
-    <script src="../bower_components/ng-file-upload/ng-file-upload-shim.min.js"></script>
-    <script src="../bower_components/ng-file-upload/ng-file-upload.min.js"></script>
+  <!-- angular-jwt -->
+  <script src="../bower_components/angular-jwt/dist/angular-jwt.min.js"></script>
+  
+  <!-- ng-file-upload -->
+  <script src="../bower_components/ng-file-upload/ng-file-upload-shim.min.js"></script>
+  <script src="../bower_components/ng-file-upload/ng-file-upload.min.js"></script>
 
-    <!-- app js -->
-    <script src="app.js"></script>
+  <!-- toaster -->
+  <script src="https://code.angularjs.org/1.6.5/angular-animate.min.js" ></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angularjs-toaster/1.1.0/toaster.min.js"></script>
 
-    <!-- services js -->
-    <script src="services/dataService.js"></script>
-    <script src="services/authService.js"></script>
-    <script src="services/storageService.js"></script>
-    <script src="services/authInterceptor.js"></script>
+  <!-- app js -->
+  <script src="app.js"></script>
 
-    <!-- controller nav -->
-    <script src="controller/navController.js"></script>
+  <!-- services js -->
+  <script src="services/dataService.js"></script>
+  <script src="services/authService.js"></script>
+  <script src="services/storageService.js"></script>
+  <script src="services/authInterceptor.js"></script>
 
-    <!-- route home -->
-    <script src="routes/home/index.js"></script>
-    <script src="routes/home/controller.js"></script>
+  <!-- controller nav -->
+  <script src="controller/navController.js"></script>
 
-    <!-- route mi Perfil -->
-    <script src="routes/miPerfil/index.js"></script>
-    <script src="routes/miPerfil/controller.js"></script>
+  <!-- route home -->
+  <script src="routes/home/index.js"></script>
+  <script src="routes/home/controller.js"></script>
 
-    <!-- route Favourites -->
-    <script src="routes/favourites/index.js"></script>
-    <script src="routes/favourites/controller.js"></script>
+  <!-- route mi Perfil -->
+  <script src="routes/miPerfil/index.js"></script>
+  <script src="routes/miPerfil/controller.js"></script>
 
-    <!-- route myProject -->
-    <script src="routes/myProject/index.js"></script>
-    <script src="routes/myProject/controller.js"></script>
+  <!-- route Favourites -->
+  <script src="routes/favourites/index.js"></script>
+  <script src="routes/favourites/controller.js"></script>
 
-    <!-- route Project Page -->
-    <script src="routes/projectPage/index.js"></script>
-    <script src="routes/projectPage/controller.js"></script>
+  <!-- route myProject -->
+  <script src="routes/myProject/index.js"></script>
+  <script src="routes/myProject/controller.js"></script>
 
-    <!-- route start Project -->
-    <script src="routes/startProject/index.js"></script>
-    <script src="routes/startProject/controller.js"></script>
+  <!-- route Project Page -->
+  <script src="routes/projectPage/index.js"></script>
+  <script src="routes/projectPage/controller.js"></script>
 
-    <!-- route start Project -->
-    <script src="routes/principal/index.js"></script>
-    <script src="routes/principal/controller.js"></script>
+  <!-- route start Project -->
+  <script src="routes/startProject/index.js"></script>
+  <script src="routes/startProject/controller.js"></script>
 
-  </body>
+  <!-- route start Project -->
+  <script src="routes/principal/index.js"></script>
+  <script src="routes/principal/controller.js"></script>
 
-  </html>
+</body>
+
+</html>
 
 
 
