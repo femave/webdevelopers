@@ -1,13 +1,13 @@
 angular.module('mainApp')
-.controller('projectPageController', function($scope, $routeParams, $location, dataService, $rootScope, toaster, SweetAlert) {
+.controller('projectPageController', function($scope, Socialshare, $routeParams, $location, dataService, $rootScope, toaster, SweetAlert) {
 
   const id = $routeParams.id
 
   dataService.getProjectPage(id)
   .then(data => {
-      $scope.project = data.data.data
-      $scope.creator = data.data.creator
-      })
+    $scope.project = data.data.data
+    $scope.creator = data.data.creator
+  })
 
   $scope.enableEditor = function(toggle) {
     if($scope.options === true){
@@ -121,42 +121,77 @@ $scope.followProject = function(){
       SweetAlert.swal({
         title: 'Project already following',
         type: 'info',
-        })
-      }
-    })
+      })
     }
-
-    $scope.clickMeToShowMessageEdit = function(options) {
-      $scope.options = options
-      if($scope.options === true){
-        SweetAlert.swal({
-          title: 'Edit mode ON',
-          text: "You can edit content!",
-          type: 'info',
-        })
-      }
-    }
-
-    $scope.joinProject = function (){
-      const user = $rootScope.loggedUser
-      const {creatorName, creatorMail} = $scope.project
-      toaster.info('Sending mail to project admin')
-      dataService.joinProject(user, creatorMail, creatorName)
-      .then(mail => {
-        toaster.success("Mail sended succes, admin project will response you as soon as posible!");
-      }) 
-
-    }
-
-    $('.myAffix').affix({
-      offset: {
-        top: 475,
-        bottom: function () {
-          return (this.bottom = $('.footer').outerHeight(true))
-        }
-      }
-    })
-
-
-
   })
+}
+
+$scope.clickMeToShowMessageEdit = function(options) {
+  $scope.options = options
+  if($scope.options === true){
+    SweetAlert.swal({
+      title: 'Edit mode ON',
+      text: "You can edit content!",
+      type: 'info',
+    })
+  }
+}
+
+$scope.joinProject = function (){
+  const user = $rootScope.loggedUser
+  const {creatorName, creatorMail} = $scope.project
+  toaster.info('Sending mail to project admin')
+  dataService.joinProject(user, creatorMail, creatorName)
+  .then(mail => {
+    toaster.success("Mail sended succes, admin project will response you as soon as posible!");
+  }) 
+
+}
+
+$('.myAffix').affix({
+  offset: {
+    top: 475,
+    bottom: function () {
+      return (this.bottom = $('.footer').outerHeight(true))
+    }
+  }
+})
+
+$scope.shareFacebook = function(){
+  const actualUrl = $location.$$absUrl
+  Socialshare.share({
+    'provider': 'facebook',
+    'attrs': {
+      'socialshareQuote': 'One of the amazin proejcts of web-developers!',
+      'socialshareUrl': actualUrl
+    }
+  });
+}
+
+$scope.shareTwitter = function(){
+  const actualUrl = $location.$$absUrl
+  Socialshare.share({
+    'provider': 'twitter',
+      'attrs': {
+        'socialshareText': 'One of the amazin proejcts of web-developers!',
+        'socialshareUrl': actualUrl,
+        'socialshareHashtags': 'webdeveloper, angular, project'
+      }
+  });
+}
+
+$scope.shareGoogle = function(){
+  const actualUrl = $location.$$absUrl
+  Socialshare.share({
+    'provider': 'google',
+      'attrs': {
+        'socialshareText': 'One of the amazin proejcts of web-developers!',
+        'socialshareUrl': actualUrl,
+        'socialshareHashtags': 'webdeveloper, angular, project'
+      }
+  });
+}
+
+
+
+})
