@@ -39,7 +39,7 @@ You need to create an **.env** file in the project root with the following envir
   SECRET=XXXXXXXXXXXXXXXXXXXXXX
   ```
   
-  - Gmail account:
+- Gmail account:
 
   ```
   MAILPASS=YOUR_MAIL_PASS
@@ -51,15 +51,15 @@ You need to create an **.env** file in the project root with the following envir
   
 - Cloudinary account
 
-```
-CLOUD_NAME=YOUR_CLOUDINARY_NAME
-```
-```
-CLOUDINARY_API_KEY=CLOUDINARY_API_KEY
-```
-```
-CLOUDINARY_API_SECRET=CLOUDINARY_API_SECRET
-```
+  ```
+  CLOUD_NAME=YOUR_CLOUDINARY_NAME
+  ```
+  ```
+  CLOUDINARY_API_KEY=CLOUDINARY_API_KEY
+  ```
+  ```
+  CLOUDINARY_API_SECRET=CLOUDINARY_API_SECRET
+  ```
 
 ---
 
