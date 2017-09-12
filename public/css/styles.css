@@ -373,6 +373,16 @@ footer {
   justify-content: space-between;
   padding-bottom: 10px !important; }
 
+@media (max-width: 990px) {
+  .myAffix {
+    display: block; }
+  .affix {
+    position: static;
+    display: block; }
+  .developersNeeded {
+    text-align: center;
+    justify-content: space-around; } }
+
 .tab-content {
   text-align: center;
   padding: 15px; }

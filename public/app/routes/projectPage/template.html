@@ -57,7 +57,7 @@
 					</div>
 
 				</div>
-				<div class="col-md-3 col-md-offset-1 myAffix" >
+				<div class="col-md-3 col-md-offset-1 myAffix">
 					<h3>Developers needed:</h3>
 					<div class="developersNeeded" ng-repeat="dev in project.developers track by $index">
 						<p id="{{$index}}" class="pull-left"><i ng-show="options" class="fa fa-trash-o" ng-click="deleteDev($index)"></i>  {{dev}}</p><a><button ng-click="joinProject()" class='pull-right btn btn-default'>Join project</button></a>
